@@ -24,4 +24,9 @@ void	*arena_alloc(t_arena *arena, size_t size);
 // Libera tutta la memoria associata all’arena
 void	arena_destroy(t_arena *arena);
 
+// Funzioni utili
+char	*arena_strdup(t_arena *arena, const char *src);
+char	*arena_strjoin(t_arena *arena, const char *s1, const char *s2);
+char	*arena_substr(t_arena *arena, const char *s, size_t start, size_t len);
+
 #endif
