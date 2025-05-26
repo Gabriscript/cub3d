@@ -10,3 +10,23 @@ int	ft_strlen(char *str)
 		i++;
 	return (i);
 }
+int	ft_strcmp(const char *main, const char *compared)
+{
+	int	i;
+
+	i = 0;
+	while (compared[i] || main[i])
+	{
+		if (compared[i] != main[i])
+			return (main[i] - compared[i]);
+		i++;
+	}
+	return (0);
+}
+
+void	ft_putstr_fd(char *str, int fd)
+{
+	if (!str)
+		return ;
+	write (fd, str, ft_strlen(str));
+}

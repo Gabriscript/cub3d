@@ -1,14 +1,13 @@
 #ifndef CUB3D_H
-#define CUB3D_H
+# define CUB3D_H
 
 # include <stdbool.h>
 # include <unistd.h>
 # include <math.h>
 # include <stddef.h>
 # include <stdio.h>
-# include <string.h>
-
-#include "arena.h"
+# include <fcntl.h>
+# include "arena.h"
 
 # define SUCCESS 0
 # define FAILURE 1
@@ -21,5 +20,9 @@ typedef struct s_game
 
 
 int		ft_strlen(char *str);
+int		ft_strcmp(const char *main, const char *compared);
+void	ft_putstr_fd(char *str, int fd);
+bool	is_valid_file(char *file, bool cub);
+
 
 #endif
