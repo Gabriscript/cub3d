@@ -1,37 +1,23 @@
-NAME        = so_long
-NAME_BONUS = so_long_bonus
+NAME        = cub3d
+NAME_BONUS = cub3d_bonus
 CC          = cc
 
 CFLAGS      = -Wextra -Wall -Werror -Wunreachable-code -Ofast -g
 LIBMLX      = ./MLX42
 
-LIBFT       = ./src/libft_project
-PRINTF      = ./src/printf_project
-
 HEADERS     = -Isrc/libft_project -I$(LIBMLX)/include -Isrc/printf_project -Isrc
-LIBS        = $(LIBMLX)/build/libmlx42.a -ldl -lglfw -pthread -lm \
-               $(LIBFT)/libft.a \
-               $(PRINTF)/libftprintf.a
+LIBS        = $(LIBMLX)/build/libmlx42.a -ldl -lglfw -pthread -lm
 
 SRCS	=	./src/main.c \
-			./src/validation.c \
-			./src/validation_2.c \
-			./src/error_messages.c \
-			./src/struct_initialisation.c \
-			./src/map_check.c \
-			./src/start_graphic.c \
-			./src/memory.c \
-			./src/movement.c \
+			./src/arena.c \
+			./src/check.c \
+			./src/utils.c \
 
-BSRCS	=	./src/main_bonus.c \
-			./src/validation_bonus.c \
-			./src/validation_2_bonus.c \
-			./src/error_messages_bonus.c \
-			./src/struct_initialisation_bonus.c \
-			./src/map_check_bonus.c \
-			./src/start_graphic_bonus.c \
-			./src/memory_bonus.c \
-			./src/movement_bonus.c \
+
+BSRCS	=	./src/main.c \
+			./src/arena.c \
+			./src/check.c \
+			./src/utils.c \
 
 OBJS	=	$(SRCS:%.c=%.o)
 BOBJ    =   $(BSRCS:%.c=%.o)
@@ -58,18 +44,14 @@ libmlx:
 	fi
 
 $(OBJS): %.o: %.c
-	@$(CC) $(CFLAGS) -o $@ -c $< $(HEADERS) && printf "Compiling: $(notdir $<)\n"
+	@$(CC) $(CFLAGS) -o $@ -c $< $(HEADERS)
 $(BOBJ): %.o: %.c
-	@$(CC) $(CFLAGS) -o $@ -c $< $(HEADERS) && printf "Compiling bonus: $(notdir $<)\n"
+	@$(CC) $(CFLAGS) -o $@ -c $< $(HEADERS)
 
 $(NAME): $(OBJS)
-	$(MAKE) -C $(LIBFT)
-	$(MAKE) -C $(PRINTF)
 	@$(CC) $(OBJS) $(LIBS) $(HEADERS) -o $(NAME)
 
 $(NAME_BONUS): $(BOBJ)
-	$(MAKE) -C $(LIBFT)
-	$(MAKE) -C $(PRINTF)
 	@$(CC) $(BOBJ) $(LIBS) $(HEADERS) -o $(NAME_BONUS)
 
 clean:
@@ -79,8 +61,6 @@ clean:
 fclean: clean
 	@rm -rf $(NAME) $(NAME_BONUS)
 	@rm -rf $(LIBMLX)/build
-	$(MAKE) -C $(LIBFT) fclean
-	$(MAKE) -C $(PRINTF) fclean
 	@rm -rf $(REPO_DIR)
 	@rm -rf $(OBJS) $(BOBJ)
 
