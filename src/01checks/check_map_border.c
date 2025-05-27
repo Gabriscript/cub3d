@@ -42,16 +42,17 @@ static bool check_side_walls(char **map, int height)
 	return (true);
 }
 
-bool is_surrounded(char **map, int height)
+bool	is_surrounded(t_game *game)
 {
-	if (!map || height <= 0)
+	if (!game->map || game->height <= 0)
 		return (false);
-	if (!check_top_bottom_walls(map[0])
-		|| !check_top_bottom_walls(map[height - 1])
-		|| !check_side_walls(map, height))
+	if (!check_top_bottom_walls(game->map[0])
+		|| !check_top_bottom_walls(game->map[game->height - 1])
+		|| !check_side_walls(game->map, game->height))
 	{
 		ft_putstr_fd("Map is not surrounded", 2);
 		return (false);
 	}
+	game->end_of_map = game->map[game->height][ft_strlen(game->map[game->height])];
 	return (true);
 }

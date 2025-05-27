@@ -27,7 +27,8 @@ int	main(int argc, char **argv)
 	}
 	ft_putstr_fd("[DEBUG] Arena created and ready!\n", 1);
 	arena_test(game->arena); //DEBUG-TEST
-
+	if (!is_valid_file(argv[1], true))
+		return (1);
 
 	// calling any usefull function as game start!!!
 
