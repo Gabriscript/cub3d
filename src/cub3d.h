@@ -15,7 +15,7 @@
 typedef struct s_game
 {
 	char	**map;
-	int		map_heigth;
+	int		height;
 	int		end_of_map;
 	char	**file;
 	t_arena *arena;
@@ -28,6 +28,8 @@ int		ft_strcmp(const char *main, const char *compared);
 void	ft_putstr_fd(char *str, int fd);
 bool	is_valid_file(char *file, bool cub);
 int		ft_isspace(char c);
-
+bool	map_has_all_component(t_game *game);
+bool 	is_map_at_end(t_game *game);
+bool	is_surrounded(t_game *game);
 
 #endif

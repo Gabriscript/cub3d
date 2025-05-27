@@ -7,7 +7,7 @@ static bool	is_cub_file(char *file)
 	len = ft_strlen(file);
 	if (len < 4)
 		return (false);
-	return (ft_strcmp(&file[len - 4], ".cub"));
+	return (ft_strcmp(&file[len - 4], ".cub") == 0);
 }
 
 static bool	is_png_file(char *file)
@@ -17,7 +17,7 @@ static bool	is_png_file(char *file)
 	len = ft_strlen(file);
 	if (len < 4)
 		return (false);
-	return (ft_strcmp(&file[len - 4], ".png"));
+	return (ft_strcmp(&file[len - 4], ".png") == 0);
 }
 static bool	is_readable_and_exist(char *file)
 {

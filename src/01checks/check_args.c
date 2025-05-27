@@ -1,6 +1,27 @@
 #include "cub3d.h"
 
-bool map_is_at_end(t_game *game)
+int	count_line(t_game *game)
+{
+	int	x;
+	int	y;
+
+	y = 0;
+	while(game->file[y])
+	{
+		x = 0;
+		while (game->file[y][x])
+				x++;
+		y++;
+	}
+	return (y);
+}
+/*int	map_height(t_game *game)
+{
+	
+
+}*/
+
+bool	is_map_at_end(t_game *game)
 {
 	int	y;
 	int	x;
@@ -20,5 +41,4 @@ bool map_is_at_end(t_game *game)
 		y++;
 	}
 	return (true);
-
 }
