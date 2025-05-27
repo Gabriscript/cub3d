@@ -26,7 +26,7 @@ static bool	is_readable_and_exist(char *file)
 	fd = open(file, O_RDONLY);
 	if (fd < 0)
 	{
-		ft_putstr_fd("File does not exist or has not reading permission", 2);
+		ft_putstr_fd("File does not exist or has not reading permission\n", 2);
 		close(fd);
 		return (false);
 	}
@@ -40,7 +40,7 @@ static bool is_directory(char *file)
 	fd = open(file, __O_DIRECTORY);
 	if (fd >= 0)
 	{
-		ft_putstr_fd("Directory is not a valid file", 2);
+		ft_putstr_fd("Directory is not a valid file\n", 2);
 		close(fd);
 		return (true);
 	}	
