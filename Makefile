@@ -10,7 +10,11 @@ LIBS        = $(LIBMLX)/build/libmlx42.a -ldl -lglfw -pthread -lm
 
 SRCS	=	./src/main.c \
 			./src/arena.c \
-			./src/check.c \
+			./src/arena_utils.c \
+			./src/01checks/check_files.c \
+			./src/01checks/check_map_border.c \
+			./src/01checks/check_map_content.c \
+			./src/01checks/check_map_args.c \
 			./src/utils.c \
 
 

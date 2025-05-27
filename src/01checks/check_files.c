@@ -17,7 +17,7 @@ static bool	is_png_file(char *file)
 	len = ft_strlen(file);
 	if (len < 4)
 		return (false);
-		return (ft_strcmp(&file[len - 4], ".png"));
+	return (ft_strcmp(&file[len - 4], ".png"));
 }
 static bool	is_readable_and_exist(char *file)
 {
@@ -58,4 +58,5 @@ bool	is_valid_file(char *file, bool cub)
 		return (true);
 	if (!cub && is_png_file(file))
 		return (true);
+	return (false);
 }
