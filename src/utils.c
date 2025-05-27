@@ -30,3 +30,8 @@ void	ft_putstr_fd(char *str, int fd)
 		return ;
 	write (fd, str, ft_strlen(str));
 }
+
+int	ft_isspace(char c)
+{
+	return ((c >= 9 && c <= 13) || c == ' ');
+}
