@@ -107,6 +107,7 @@ SRCS	=	./src/main.c \
 			./src/01checks/check_map_border.c \
 			./src/01checks/check_map_content.c \
 			./src/01checks/check_args.c \
+			./src/01checks/divide_cub_file.c \
 			./src/02player/player_movement.c \
 			./src/03rendering/rendering.c \
 			./src/utils.c \
