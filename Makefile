@@ -110,6 +110,8 @@ SRCS	=	./src/main.c \
 			./src/02player/player_movement.c \
 			./src/03rendering/rendering.c \
 			./src/utils.c \
+			./gnl_cub3d/get_next_line_bonus.c \
+			./gnl_cub3d/get_next_line_utils_bonus.c \
 
 
 BSRCS	=	./src/main.c \
@@ -120,6 +122,8 @@ BSRCS	=	./src/main.c \
 			./src/01checks/check_map_content.c \
 			./src/01checks/check_args.c \
 			./src/utils.c \
+			./gnl_cub3d/get_next_line_bonus.c \
+			./gnl_cub3d/get_next_line_utils_bonus.c \
 
 OBJS	=	$(SRCS:%.c=%.o)
 BOBJ    =   $(BSRCS:%.c=%.o)

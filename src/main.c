@@ -31,18 +31,21 @@
 // 	return (SUCCESS);
 // }
 
+static void	argc_check(int argc)
+{
+	if (argc != 2)
+	{
+		ft_putstr_fd("Error\nWrong number of arguments\n", 2);
+		exit (EXIT_FAILURE);
+	}
+}
 
 int	main(int argc, char **argv)
 {
 	t_game	*game;
 
-	if (argc != 2)
-	{
-		ft_putstr_fd("Error\nWrong number of arguments\n", 2);
-		return (EXIT_FAILURE);
-	}
+	argc_check(argc);
 	ft_map_name(argv[1]);
-
 	game = malloc(sizeof(t_game));
 	if (!game)
 		return (FAILURE);
@@ -52,19 +55,17 @@ int	main(int argc, char **argv)
 		free(game);
 		return (FAILURE);
 	}
+	map_validation(argv[1], game);
 
-	if (!is_valid_file(argv[1], true))
-	{
-		simple_exit(game);
-		return (1);
-	}
+	// graphic_initialisation(game);
+
 	if (init_mlx_window(game) == FAILURE)
 	{
 		simple_exit(game);
 		return (FAILURE);
 	}
-	// calling any usefull function as game start!!!
 
+	// calling any usefull function as game start!!!
 	simple_exit(game);
 	return (SUCCESS);
 }
