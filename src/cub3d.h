@@ -41,6 +41,26 @@ typedef struct s_game
 	mlx_t 	*mlx; 
 	t_arena *arena;
 	t_file	file;
+	mlx_image_t *image;
+	int		ceiling[3];
+	int		floor[3];
+
+	// Texture PNG per i muri
+	mlx_texture_t	*north_texture;
+	mlx_texture_t	*south_texture;
+	mlx_texture_t	*east_texture;
+	mlx_texture_t	*west_texture;
+	
+	// Immagini MLX delle texture
+	mlx_image_t		*north_img;
+	mlx_image_t		*south_img;
+	mlx_image_t		*east_img;
+	mlx_image_t		*west_img;
+	
+	// Posizione del giocatore
+	double		player_x;
+	double		player_y;
+	double		player_angle;
 }	t_game;
 
 //map
