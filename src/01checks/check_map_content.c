@@ -58,10 +58,17 @@ bool	map_has_all_component(t_game *game)
 	if (!count_components(game, components))
 		return (false);
 	if (components[0] < 1 || components[1] < 1)
-		return (false);
+		return (false);//mappa non valida
 	count = components[2] + components[3] + components[4] + components[5];
 	if (count != 1)
-		return (false);
+		return (false);//troppi players
 	return (true);
 }
 
+void	map_validation(char *argv, t_game *game)
+{
+	(void)argv;
+	(void)game;
+	// map_has_all_component()
+	
+}

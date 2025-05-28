@@ -26,18 +26,24 @@ typedef struct s_game
 	t_arena *arena;
 }	t_game;
 
+
+//map
 void	ft_map_name(char *argv);
+bool	map_has_all_component(t_game *game);
+bool 	is_map_at_end(t_game *game);
+void	map_validation(char *argv, t_game *game);
+bool	is_surrounded(t_game *game);
+
+//exit
+void	simple_exit(t_game *game);
+
+//utils
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strchr(const char *s, int c);
-void	simple_exit(t_game *game);
 int		ft_strlen(char *str);
 int		ft_strcmp(const char *main, const char *compared);
 void	ft_putstr_fd(char *str, int fd);
-bool	is_valid_file(char *file, bool cub);
 int		ft_isspace(char c);
-bool	map_has_all_component(t_game *game);
-bool 	is_map_at_end(t_game *game);
-bool	is_surrounded(t_game *game);
 void	key_hook(mlx_key_data_t keydata, void* param);
 void	close_window(void *param);
 int		init_mlx_window(t_game *game);
