@@ -96,8 +96,10 @@ LIBS = $(LIBMLX)/build/libmlx42.a $(LIBMLX)/build/_deps/glfw-build/src/libglfw3.
 
 SRCS	=	./src/main.c \
 			./src/arena.c \
+			./src/simple_exit.c \
 			./src/arena_utils.c \
 			./src/01checks/check_files.c \
+			./src/01checks/check_map.c \
 			./src/01checks/check_map_border.c \
 			./src/01checks/check_map_content.c \
 			./src/01checks/check_args.c \
