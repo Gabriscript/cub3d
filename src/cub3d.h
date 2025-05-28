@@ -8,11 +8,13 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include "arena.h"
-
+# include <MLX42/MLX42.h>
 # include <stdlib.h> //exit
 
 # define SUCCESS 0
 # define FAILURE 1
+# define WINDOW_WIDTH 800
+# define WINDOW_HEIGHT 600
 
 typedef struct s_game
 {
@@ -20,6 +22,7 @@ typedef struct s_game
 	int		height;
 	int		end_of_map;
 	char	**file;
+	mlx_t 	*mlx; 
 	t_arena *arena;
 }	t_game;
 
@@ -35,5 +38,8 @@ int		ft_isspace(char c);
 bool	map_has_all_component(t_game *game);
 bool 	is_map_at_end(t_game *game);
 bool	is_surrounded(t_game *game);
+void	key_hook(mlx_key_data_t keydata, void* param);
+void	close_window(void *param);
+int		init_mlx_window(t_game *game);
 
 #endif

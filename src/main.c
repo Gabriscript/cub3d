@@ -31,6 +31,7 @@
 // 	return (SUCCESS);
 // }
 
+
 int	main(int argc, char **argv)
 {
 	t_game	*game;
@@ -57,7 +58,11 @@ int	main(int argc, char **argv)
 		simple_exit(game);
 		return (1);
 	}
-
+	if (init_mlx_window(game) == FAILURE)
+	{
+		simple_exit(game);
+		return (FAILURE);
+	}
 	// calling any usefull function as game start!!!
 
 	simple_exit(game);

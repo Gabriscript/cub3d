@@ -92,7 +92,11 @@ LIBMLX      = ./MLX42
 
 HEADERS     = -I$(LIBMLX)/include -Isrc
 
-LIBS = $(LIBMLX)/build/libmlx42.a $(LIBMLX)/build/_deps/glfw-build/src/libglfw3.a -ldl -pthread -lm
+LIBS = $(LIBMLX)/build/libmlx42.a \
+       $(LIBMLX)/build/_deps/glfw-build/src/libglfw3.a \
+       -ldl -pthread -lm \
+       -lX11 -lXrandr -lXcursor -lXi -lXxf86vm -lXinerama -lXext
+
 
 SRCS	=	./src/main.c \
 			./src/arena.c \
@@ -103,6 +107,8 @@ SRCS	=	./src/main.c \
 			./src/01checks/check_map_border.c \
 			./src/01checks/check_map_content.c \
 			./src/01checks/check_args.c \
+			./src/02player/player_movement.c \
+			./src/03rendering/rendering.c \
 			./src/utils.c \
 
 
