@@ -20,16 +20,14 @@
 
 typedef struct s_file
 {
-	// int		char_in_line;
-	int		total_file_len; //non init
-	// int		total_columns;
-	int		total_rows; //non init
-	char	*full_file_one_line; //non init
-	int		start_position; //non init
-	// int		exit_position;
-	// int		collectible_position;
-	char	**map_matrix; //non init
-	char	**map_matrix_flood; //non init
+	char	*full_file_one_line;
+	char	*full_map;
+	char	*full_info;
+	int		total_file_len;
+	int		total_rows;
+	int		start_position;
+	char	**map_matrix;
+	char	**map_matrix_flood;
 }	t_file;
 
 typedef struct s_game
