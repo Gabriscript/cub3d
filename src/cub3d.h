@@ -69,7 +69,7 @@ bool	map_has_all_component(t_game *game);
 bool 	is_map_at_end(t_game *game);
 void	ft_map_validation(char *argv, t_game *game);
 bool	is_surrounded(t_game *game);
-void	divede_cub_file(char *argv, t_game *game);
+void	divede_cub_file(t_game *game);
 
 //exit
 void	simple_exit(t_game *game);
