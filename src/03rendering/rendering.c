@@ -17,11 +17,11 @@ void	render_background(t_game *game)
 		while (x < WINDOW_WIDTH)
 		{
 			if (y < WINDOW_HEIGHT / 2)
-				mlx_put_pixel(game->image, x, y, create_rgba( game->ceiling[0],game->ceiling[1],
+				mlx_put_pixel(game->image, x, y, create_rgba( game->ceiling[0],255,
 					game->ceiling[2], 255));
 			else
 				mlx_put_pixel(game->image, x, y, create_rgba( game->floor[0],
-					game->ceiling[1], game->ceiling[2], 255));
+					game->floor[1], game->floor[2], 255));
 			x++;
 		}
 		y++;
@@ -31,6 +31,7 @@ void	render_background(t_game *game)
 int	rendering(t_game *game)
 {
 	render_background(game);
+	draw_mini_map(game);
 	//raycast();
 	return 1;
 
@@ -61,7 +62,7 @@ int init_mlx_window(t_game *game)
         mlx_terminate(game->mlx);
         return (FAILURE);
     }
-	render_background(game);
+	rendering(game);
     mlx_close_hook(game->mlx, close_window, game->mlx);
     mlx_key_hook(game->mlx, key_hook,game->mlx);
     mlx_loop(game->mlx);
