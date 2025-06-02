@@ -78,13 +78,10 @@ static void	total_file_len_calculation(int fd, t_game *game, t_file *file)
 	while (line != NULL)
 	{
 		char_in_line = ft_strlen_gnl(line);
-		printf("[DEBUG] in check_map_content.c char_in_line: %d\n", char_in_line); //debug
-		printf("[DEBUG] in check_map_content.c line: %s\n", line); //debug
 		free(line);
 		file->total_file_len = file->total_file_len + char_in_line;
-		printf("[DEBUG] in check_map_content.c total_file_len: %d\n", file->total_file_len); //debug
 		line = get_next_line(fd);
-		printf("[DEBUG] in check_map_content.c LAST line: %s\n", line); //debug
+
 	}
 }
 
@@ -104,8 +101,6 @@ void	filling_line(char *map_name, t_game *game)
 		exit(EXIT_FAILURE);
 	}
 	game->file.full_file_one_line[game->file.total_file_len] = '\0';
-	printf("[DEBUG] in check_map_content.c full_file_one_line: \n%s\n", game->file.full_file_one_line); //debug
-	printf("[DEBUG] in check_map_content.c STOP\n"); //debug
 	close(fd);
 }
 

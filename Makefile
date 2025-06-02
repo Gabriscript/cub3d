@@ -111,19 +111,28 @@ SRCS	=	./src/main.c \
 			./src/02player/player_movement.c \
 			./src/03rendering/rendering.c \
 			./src/03rendering/texture.c \
+			./src/03rendering/mini_map.c \
 			./src/utils.c \
+			./src/utils02.c \
 			./gnl_cub3d/get_next_line_bonus.c \
 			./gnl_cub3d/get_next_line_utils_bonus.c \
 
 
 BSRCS	=	./src/main.c \
 			./src/arena.c \
+			./src/simple_exit.c \
 			./src/arena_utils.c \
 			./src/01checks/check_files.c \
+			./src/01checks/check_map.c \
 			./src/01checks/check_map_border.c \
 			./src/01checks/check_map_content.c \
 			./src/01checks/check_args.c \
+			./src/01checks/divide_cub_file.c \
+			./src/02player/player_movement.c \
+			./src/03rendering/rendering.c \
+			./src/03rendering/texture.c \
 			./src/utils.c \
+			./src/utils02.c \
 			./gnl_cub3d/get_next_line_bonus.c \
 			./gnl_cub3d/get_next_line_utils_bonus.c \
 
