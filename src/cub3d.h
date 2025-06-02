@@ -14,8 +14,14 @@
 
 # define SUCCESS 0
 # define FAILURE 1
-# define WINDOW_WIDTH 800
-# define WINDOW_HEIGHT 600
+# define WINDOW_WIDTH 1600
+# define WINDOW_HEIGHT 1200
+# define SPEED 0.1
+# define ROTATION_SPEED 0.05
+# define M_PI 3.14159265358979323846
+# define MINI_MAP 10
+# define MINI_OFFSET 10
+
 
 
 typedef struct s_file
@@ -44,6 +50,7 @@ typedef struct s_game
 	mlx_image_t *image;
 	int		ceiling[3];
 	int		floor[3];
+	int		mini_size;
 
 	// Texture PNG per i muri
 	mlx_texture_t	*north_texture;
@@ -84,5 +91,8 @@ int		ft_isspace(char c);
 void	key_hook(mlx_key_data_t keydata, void* param);
 void	close_window(void *param);
 int		init_mlx_window(t_game *game);
+int		create_rgba(int r, int g, int b, int a);
+void	draw_mini_map(t_game *game);
+
 
 #endif

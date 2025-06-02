@@ -5,7 +5,6 @@ mlx_image_t* load_single_texture(mlx_t* mlx, const char* path)
     mlx_texture_t* texture;
     mlx_image_t* image;
     
-    // Carica la texture dal file PNG
     texture = mlx_load_png(path);
     if (!texture)
     {
@@ -14,8 +13,6 @@ mlx_image_t* load_single_texture(mlx_t* mlx, const char* path)
         ft_putstr_fd("\n", 2);
         return (NULL);
     }
-    
-    // Converte la texture in immagine MLX
     image = mlx_texture_to_image(mlx, texture);
     if (!image)
     {
@@ -23,16 +20,14 @@ mlx_image_t* load_single_texture(mlx_t* mlx, const char* path)
         mlx_delete_texture(texture);
         return (NULL);
     }
-    
-    // Libera la texture (l'immagine ora contiene i dati)
     mlx_delete_texture(texture);
     return (image);
 }
 
-// Carica tutte le texture necessarie
+
 int load_textures(t_game *game)
 {
-    // Esempio di percorsi - dovrai adattarli ai tuoi file
+
     game->north_img = load_single_texture(game->mlx, "../../FPStextures/FPS64x/Texture0.png");
     if (!game->north_img)
         return (FAILURE);
@@ -52,7 +47,6 @@ int load_textures(t_game *game)
     return (SUCCESS);
 }
 
-// Libera tutte le texture
 void free_textures(t_game *game)
 {
     if (game->north_img)
