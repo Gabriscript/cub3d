@@ -63,3 +63,4 @@ printf("[DEBUG] in divide_cup_file.c TOTAL file len: %d\n", game->file.total_fil
 printf("[DEBUG] in check_map_content.c full_info: %s\n", game->file.full_info); //debug
 printf("[DEBUG] in check_map_content.c full_map: %s\n", game->file.full_map); //debug
 }
+//test
