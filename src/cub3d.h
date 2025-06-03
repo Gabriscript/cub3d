@@ -94,4 +94,6 @@ void	draw_mini_map(t_game *game);
 
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 
+
+//test - to be removed
 #endif
