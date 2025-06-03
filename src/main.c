@@ -55,7 +55,8 @@ void	init_structs(t_game *game)
 int	main(int argc, char **argv)
 {
 	t_game	game;
-
+	writeCIAO
+	
 	argc_check(argc);
 	ft_map_name(argv[1]);
 	// game = malloc(sizeof(t_game));
