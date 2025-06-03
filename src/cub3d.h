@@ -26,16 +26,14 @@
 
 typedef struct s_file
 {
-	// int		char_in_line;
-	int		total_file_len; //non init
-	// int		total_columns;
-	int		total_rows; //non init
-	char	*full_file_one_line; //non init
-	int		start_position; //non init
-	// int		exit_position;
-	// int		collectible_position;
-	char	**map_matrix; //non init
-	char	**map_matrix_flood; //non init
+	char	*full_file_one_line;
+	char	*full_map;
+	char	*full_info;
+	int		total_file_len;
+	int		total_rows;
+	int		start_position;
+	char	**map_matrix;
+	char	**map_matrix_flood;
 }	t_file;
 
 typedef struct s_game
@@ -76,7 +74,7 @@ bool	map_has_all_component(t_game *game);
 bool 	is_map_at_end(t_game *game);
 void	ft_map_validation(char *argv, t_game *game);
 bool	is_surrounded(t_game *game);
-void	divede_cub_file(char *argv, t_game *game);
+void	divede_cub_file(t_game *game);
 
 //exit
 void	simple_exit(t_game *game);
@@ -91,8 +89,12 @@ int		ft_isspace(char c);
 void	key_hook(mlx_key_data_t keydata, void* param);
 void	close_window(void *param);
 int		init_mlx_window(t_game *game);
+<<<<<<< Updated upstream
 int		create_rgba(int r, int g, int b, int a);
 void	draw_mini_map(t_game *game);
 
+=======
+void	*ft_memcpy(void *dst, const void *src, size_t n);
+>>>>>>> Stashed changes
 
 #endif

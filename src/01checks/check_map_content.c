@@ -68,24 +68,21 @@ bool	map_has_all_component(t_game *game)
 static void	total_file_len_calculation(int fd, t_game *game, t_file *file)
 {
 	char	*line;
-	int		rows;
 	int		char_in_line;
 
-	(void)file;
-	rows = 0;
+	(void)game;
 	line = get_next_line(fd);
 	char_in_line = 0;
-
-	// if (line == NULL) //controllo necessario???
+	// if (line == NULL) //controllo necessario??? non ho malloc. forse un messaggio di errore?
+	
 	while (line != NULL)
 	{
 		char_in_line = ft_strlen_gnl(line);
 		free(line);
 		file->total_file_len = file->total_file_len + char_in_line;
 		line = get_next_line(fd);
-		rows++;
+
 	}
-	game->file.total_rows = rows;
 }
 
 void	filling_line(char *map_name, t_game *game)
@@ -127,10 +124,14 @@ static void	ft_map_file_check(char *map_name, t_game *game)
 
 void	ft_map_validation(char *argv, t_game *game)
 {
+	// --- IMPORTANTE ---
+	// IN GNL SOSTITUIRE TUTTI I MALLOC CON ARENA,
+	// VA PASSATA T_GAME *GAME
+
 	ft_map_file_check(argv, game);
 	//dividiamo la mappa dagli altri dati
 	//scorro la full_file_one_line e controllo i 6 dati iniziali
-	divede_cub_file(argv, game);
+	divede_cub_file(game);
 
 	// map_has_all_component()
 	
