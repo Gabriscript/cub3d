@@ -89,12 +89,9 @@ int		ft_isspace(char c);
 void	key_hook(mlx_key_data_t keydata, void* param);
 void	close_window(void *param);
 int		init_mlx_window(t_game *game);
-<<<<<<< Updated upstream
 int		create_rgba(int r, int g, int b, int a);
 void	draw_mini_map(t_game *game);
 
-=======
 void	*ft_memcpy(void *dst, const void *src, size_t n);
->>>>>>> Stashed changes
 
 #endif
