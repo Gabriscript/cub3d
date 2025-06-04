@@ -2,8 +2,8 @@
 
 void	close_window(void *param)
 {
-	mlx_t *mlx = (mlx_t *)param;
-	mlx_close_window(mlx); //seg fault
+	t_game *game = (t_game *)param;
+	mlx_close_window(game->mlx); //seg fault
 }
 static bool	is_walkable(t_game *game, double x, double y)
 {
@@ -49,7 +49,8 @@ void	key_hook(mlx_key_data_t keydata, void *param)
     {
         if (keydata.key == MLX_KEY_ESCAPE)
 		{
-			close_window(game->mlx);
+			close_window(game);
+
 		}
         else if (keydata.key == MLX_KEY_W)
             move_player(game, 1.0);
