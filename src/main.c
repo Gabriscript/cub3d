@@ -31,7 +31,7 @@
 // 	return (SUCCESS);
 // }
 
-static void	argc_check(int argc)
+void	argc_check(int argc)
 {
 	if (argc != 2)
 	{

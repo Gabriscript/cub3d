@@ -63,8 +63,8 @@ int init_mlx_window(t_game *game)
         return (FAILURE);
     }
 	rendering(game);
-    mlx_close_hook(game->mlx, close_window, game->mlx);
-    mlx_key_hook(game->mlx, key_hook,game->mlx);
+    mlx_close_hook(game->mlx, close_window, game);
+    mlx_key_hook(game->mlx, key_hook,game);
     mlx_loop(game->mlx);
     mlx_delete_image(game->mlx, game->image);
     mlx_terminate(game->mlx);
