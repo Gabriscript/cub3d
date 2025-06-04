@@ -70,7 +70,7 @@ printf("[DEBUG] in divide_cup_file.c TOTAL file len: %d\n", game->file.total_fil
 	fill_full_map(game, map_len, info_len);
 	map_len_check(game);
 
-printf("[DEBUG] in check_map_content.c full_info: \n%s\n", game->file.full_info); //debug
-printf("[DEBUG] in check_map_content.c full_map: \n%s\n", game->file.full_map); //debug
+printf("[DEBUG] in divide_cup_file.c full_info: \n%s\n", game->file.full_info); //debug
+printf("[DEBUG] in divide_cup_file.c full_map: \n%s\n", game->file.full_map); //debug
 
 }

@@ -48,7 +48,9 @@ void	key_hook(mlx_key_data_t keydata, void *param)
     if (keydata.action == MLX_PRESS || keydata.action == MLX_REPEAT)
     {
         if (keydata.key == MLX_KEY_ESCAPE)
-            close_window(game->mlx);
+		{
+			close_window(game->mlx);
+		}
         else if (keydata.key == MLX_KEY_W)
             move_player(game, 1.0);
         else if (keydata.key == MLX_KEY_S)
