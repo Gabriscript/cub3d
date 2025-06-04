@@ -149,10 +149,6 @@ void	player_start_position_condition_check(char *line, t_game *game)
 
 void	ft_map_validation(char *argv, t_game *game)
 {
-	// --- IMPORTANTE ---
-	// IN GNL SOSTITUIRE TUTTI I MALLOC CON ARENA,
-	// VA PASSATA T_GAME *GAME
-
 	ft_cub_file_check(argv, game);
 	//dividiamo la mappa dagli altri dati
 	//scorro la full_file_one_line e controllo i 6 dati iniziali
