@@ -30,10 +30,10 @@ typedef struct s_file
 	char	*full_map;
 	char	*full_info;
 	int		total_file_len;
-	int		total_rows;
+	int		total_rows;  //serve?
 	int		start_position;
 	char	**map_matrix;
-	char	**map_matrix_flood;
+	char	**map_matrix_flood;  //serve?
 }	t_file;
 
 typedef struct s_game
@@ -75,6 +75,7 @@ bool 	is_map_at_end(t_game *game);
 void	ft_map_validation(char *argv, t_game *game);
 bool	is_surrounded(t_game *game);
 void	divede_cub_file(t_game *game);
+void	fill_map_matrix(t_game *game);
 
 //exit
 void	simple_exit(t_game *game);
@@ -91,7 +92,7 @@ void	close_window(void *param);
 int		init_mlx_window(t_game *game);
 int		create_rgba(int r, int g, int b, int a);
 void	draw_mini_map(t_game *game);
-
+char	**ft_split(char const *s, char c, t_game *game);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 
 
