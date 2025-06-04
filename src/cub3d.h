@@ -8,7 +8,7 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include "arena.h"
-# include "get_next_line_bonus.h"
+// # include "get_next_line_bonus.h"
 # include <MLX42/MLX42.h>
 # include <stdlib.h> //exit
 

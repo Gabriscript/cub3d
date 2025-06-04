@@ -1,4 +1,5 @@
 #include "cub3d.h"
+#include "get_next_line_bonus.h"
 
 // static bool is_component(char c)
 // {
@@ -70,17 +71,16 @@ static void	total_file_len_calculation(int fd, t_game *game, t_file *file)
 	char	*line;
 	int		char_in_line;
 
-	(void)game;
-	line = get_next_line(fd);
+	line = get_next_line(fd, game);
 	char_in_line = 0;
 	// if (line == NULL) //controllo necessario??? non ho malloc. forse un messaggio di errore?
 	
 	while (line != NULL)
 	{
 		char_in_line = ft_strlen_gnl(line);
-		free(line);
+		// free(line);
 		file->total_file_len = file->total_file_len + char_in_line;
-		line = get_next_line(fd);
+		line = get_next_line(fd, game);
 
 	}
 }
