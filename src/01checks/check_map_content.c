@@ -152,7 +152,9 @@ void	ft_map_validation(char *argv, t_game *game)
 	ft_cub_file_check(argv, game);
 	//dividiamo la mappa dagli altri dati
 	//scorro la full_file_one_line e controllo i 6 dati iniziali
-	divede_cub_file(game);
+	info_search(game);
+	//dopo questo punto da controllare
+	divide_cub_file(game);
 
 	// map_has_all_component()
 	player_start_position_condition_check(game->file.full_map, game);

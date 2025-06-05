@@ -23,3 +23,23 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
+
+char	*ft_strndup(const char *s, t_game *game, int start, int end)
+{
+	char	*src;
+	char	*scopy;
+	int		x;
+
+	src = (char *)s;
+	scopy = (char *) arena_alloc(game->arena, (ft_strlen(end - start) + 1) * sizeof(char));
+	// if (scopy == NULL)
+	// 	return (NULL);
+	x = start;
+	while (x < end)
+	{
+		scopy[x] = src[x];
+		x++;
+	}
+	scopy[x] = '\0';
+	return (scopy);
+}

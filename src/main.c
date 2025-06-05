@@ -50,6 +50,12 @@ void	init_structs(t_game *game)
 	game->file.start_position = 0;
 	game->file.map_matrix = NULL;
 	game->file.map_matrix_flood = NULL;
+	game->file.NO = 0;
+	game->file.SO = 0;
+	game->file.WE = 0;
+	game->file.EA = 0;
+	game->file.F = 0;
+	game->file.C = 0;
 }
 
 int	main(int argc, char **argv)
