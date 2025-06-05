@@ -93,7 +93,7 @@ LIBMLX      = ./MLX42
 HEADERS     = -I$(LIBMLX)/include -Isrc
 
 LIBS = $(LIBMLX)/build/libmlx42.a \
-       $(LIBMLX)/build/_deps/glfw-build/src/libglfw3.a \
+       ./glfw/build/src/libglfw3.a \
        -ldl -pthread -lm \
        -lX11 -lXrandr -lXcursor -lXi -lXxf86vm -lXinerama -lXext
 
@@ -111,6 +111,7 @@ SRCS	=	./src/main.c \
 			./src/01checks/divide_cub_file.c \
 			./src/02player/player_movement.c \
 			./src/03rendering/rendering.c \
+			./src/03rendering/raycasting.c \
 			./src/03rendering/texture.c \
 			./src/03rendering/mini_map.c \
 			./src/utils.c \

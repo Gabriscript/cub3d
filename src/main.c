@@ -52,34 +52,30 @@ void	init_structs(t_game *game)
 	game->file.map_matrix_flood = NULL;
 }
 
-int	main(int argc, char **argv)
+int main(int argc, char **argv)
 {
-	t_game	game;
+    t_game game;
 
-	argc_check(argc);
-	ft_map_name(argv[1]);
-	// game = malloc(sizeof(t_game));
-	// if (!game)
-	// 	return (FAILURE);
-	game.arena = arena_create(ARENA_SIZE);
-	if (!game.arena)
-	{
-		// free(game);
-		return (FAILURE);
-	}
-	// init_all(game); // da costruire
-	init_structs(&game);
-	ft_map_validation(argv[1], &game);
+    argc_check(argc);
+    ft_map_name(argv[1]);
+    
+    game.arena = arena_create(ARENA_SIZE);
+    if (!game.arena)
+        return (FAILURE);
+        
+    init_structs(&game);
+    
+    // Per ora usiamo una mappa di test invece del parsing
+    init_test_map(&game);
+    
+    // ft_map_validation(argv[1], &game); // Commenta temporaneamente
+    
+    if (init_mlx_window(&game) == FAILURE)
+    {
+        simple_exit(&game);
+        return (FAILURE);
+    }
 
-	// graphic_initialisation(game);
-
-	if (init_mlx_window(&game) == FAILURE)
-	{
-		simple_exit(&game);
-		return (FAILURE);
-	}
-
-	// calling any usefull function as game start!!!
-	simple_exit(&game);
-	return (SUCCESS);
+    simple_exit(&game);
+    return (SUCCESS);
 }
