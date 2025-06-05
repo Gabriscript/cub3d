@@ -31,7 +31,7 @@ static void	fill_full_map(t_game *game, int map_len, int info_len)
 // 	return(i);
 // }
 */
-
+/*
 // static int	first_char_map(t_game *game, int i)
 // {
 // 	i = i + 1;
@@ -50,12 +50,10 @@ static void	fill_full_map(t_game *game, int map_len, int info_len)
 // 		i++;
 // 	}
 // 	while (game->file.full_file_one_line[i] != '\n')
-// 		i--;
-	
-	
-	
+// 		i--;	
 // 	return(i);
 // }
+*/
 
 static void	map_len_check(t_game *game)
 {
@@ -67,7 +65,7 @@ static void	map_len_check(t_game *game)
 		exit (EXIT_FAILURE);
 	}
 }
-
+/*
 // void	divede_cub_file(t_game *game)
 // {
 // 	int	i;
@@ -102,6 +100,7 @@ static void	map_len_check(t_game *game)
 // printf("[DEBUG] in divide_cup_file.c full_map: \n%s\n", game->file.full_map); //debug
 
 // }
+*/
 
 void	divide_cub_file(t_game *game)
 {
@@ -125,7 +124,7 @@ void	divide_cub_file(t_game *game)
 		printf("[DEBUG] in divide_cup_file.c TOTAL file len: %d\n", game->file.total_file_len); //debug
 		
 		// i = last_char_check(game, i);
-		i = first_char_map(game, i);
+		// i = first_char_map(game, i);
 		map_len = game->file.total_file_len - info_len;
 // printf("[DEBUG] in divide_cup_file.c map len: %d\n", map_len); //debug
 

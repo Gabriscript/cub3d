@@ -24,14 +24,14 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	return (dst);
 }
 
-char	*ft_strndup(const char *s, t_game *game, int start, int end)
+char	*ft_strdupline(const char *s, t_game *game, int start, int end)
 {
 	char	*src;
 	char	*scopy;
 	int		x;
 
 	src = (char *)s;
-	scopy = (char *) arena_alloc(game->arena, (ft_strlen(end - start) + 1) * sizeof(char));
+	scopy = (char *) arena_alloc(game->arena, ((end - start) + 1) * sizeof(char));
 	// if (scopy == NULL)
 	// 	return (NULL);
 	x = start;
@@ -41,5 +41,6 @@ char	*ft_strndup(const char *s, t_game *game, int start, int end)
 		x++;
 	}
 	scopy[x] = '\0';
+	printf("[DEBUG] in utils02.c SCOPY: %s\n", scopy);//debug
 	return (scopy);
 }

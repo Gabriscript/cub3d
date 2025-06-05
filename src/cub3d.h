@@ -101,7 +101,7 @@ int		create_rgba(int r, int g, int b, int a);
 void	draw_mini_map(t_game *game);
 char	**ft_split(char const *s, char c, t_game *game);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
-char	*ft_strndup(const char *s, t_game *game);
+char	*ft_strdupline(const char *s, t_game *game, int start, int end);
 
 
 //test - to be removed
