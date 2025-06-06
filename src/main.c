@@ -44,7 +44,6 @@ void	init_structs(t_game *game)
 {
 	game->file.full_file_one_line = NULL;
 	game->file.full_map = NULL;
-	game->file.full_info = NULL;
 	game->file.total_file_len = 0;
 	game->file.total_rows = 0;
 	game->file.start_position = 0;
@@ -56,6 +55,12 @@ void	init_structs(t_game *game)
 	game->file.EA = 0;
 	game->file.F = 0;
 	game->file.C = 0;
+	game->file.NO_path = NULL;
+	game->file.SO_path = NULL;
+	game->file.WE_path = NULL;
+	game->file.EA_path = NULL;
+	game->file.F_path = NULL;
+	game->file.C_path = NULL;
 }
 
 int	main(int argc, char **argv)

@@ -108,6 +108,7 @@ SRCS	=	./src/main.c \
 			./src/01checks/check_map_content.c \
 			./src/01checks/check_args.c \
 			./src/01checks/info_search.c \
+			./src/01checks/find_path_color.c \
 			./src/01checks/fill_map_matrix.c \
 			./src/01checks/divide_cub_file.c \
 			./src/02player/player_movement.c \
@@ -131,6 +132,7 @@ BSRCS	=	./src/main.c \
 			./src/01checks/check_map_content.c \
 			./src/01checks/check_args.c \
 			./src/01checks/info_search.c \
+			./src/01checks/find_path_color.c \
 			./src/01checks/fill_map_matrix.c \
 			./src/01checks/divide_cub_file.c \
 			./src/02player/player_movement.c \

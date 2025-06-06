@@ -155,7 +155,7 @@ void	ft_map_validation(char *argv, t_game *game)
 	//scorro la full_file_one_line e controllo i 6 dati iniziali
 	info_search(game);
 	//dopo questo punto da controllare
-	divide_cub_file(game);
+	
 
 	// map_has_all_component()
 	player_start_position_condition_check(game->file.full_map, game);

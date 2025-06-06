@@ -29,16 +29,22 @@ char	*ft_strdupline(const char *s, t_game *game, int start, int end)
 	char	*src;
 	char	*scopy;
 	int		x;
+	// printf("[DEBUG] in utils02.c S: %s\n", s);//debug
 
+printf("[DEBUG] in utils02.c START: %d\n", start);//debug
+printf("[DEBUG] in utils02.c END: %d\n", end);//debug	
 	src = (char *)s;
 	scopy = (char *) arena_alloc(game->arena, ((end - start) + 1) * sizeof(char));
 	// if (scopy == NULL)
 	// 	return (NULL);
-	x = start;
-	while (x < end)
+	x = 0;
+	while (start < end)
 	{
-		scopy[x] = src[x];
+		while (src[start] == ' ')
+			start++;
+		scopy[x] = src[start];
 		x++;
+		start++;
 	}
 	scopy[x] = '\0';
 	printf("[DEBUG] in utils02.c SCOPY: %s\n", scopy);//debug

@@ -28,7 +28,6 @@ typedef struct s_file
 {
 	char	*full_file_one_line;
 	char	*full_map;
-	char	*full_info;
 	int		total_file_len;
 	int		total_rows;  //serve?
 	int		start_position;
@@ -40,6 +39,12 @@ typedef struct s_file
 	int		EA;
 	int		F;
 	int		C;
+	char	*NO_path;
+	char	*SO_path;
+	char	*WE_path;
+	char	*EA_path;
+	char	*F_path;
+	char	*C_path;
 }	t_file;
 
 typedef struct s_game
@@ -81,8 +86,11 @@ bool 	is_map_at_end(t_game *game);
 void	ft_map_validation(char *argv, t_game *game);
 bool	is_surrounded(t_game *game);
 void	info_search(t_game *s_game);
-void	divide_cub_file(t_game *game);
+void	divide_cub_file(t_game *game, int *i);
 void	fill_map_matrix(t_game *game);
+int		find_path_1(t_game *game, int *i);
+int		find_path_2(t_game *game, int *i);
+int		find_color(t_game *game, int *i);
 
 //exit
 void	simple_exit(t_game *game);
