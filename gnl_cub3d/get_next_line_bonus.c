@@ -37,7 +37,6 @@ char	*ft_fill_line_gnl(int fd, char *line, t_game *game)
 		dimension = read(fd, buffer, BUFFER_SIZE);
 		if (dimension == -1)
 		{
-			// free (buffer);
 			return (NULL);
 		}
 		if (dimension == 0 && (line == NULL || line[0] == '\0'))
@@ -47,7 +46,6 @@ char	*ft_fill_line_gnl(int fd, char *line, t_game *game)
 		if (line == NULL)
 			break ;
 	}
-	// free (buffer);
 	return (line);
 }
 

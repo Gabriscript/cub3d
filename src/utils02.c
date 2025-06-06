@@ -24,19 +24,35 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	return (dst);
 }
 
-char	*ft_strdupline(const char *s, t_game *game, int start, int end)
+char	*ft_strdup_path(const char *s, t_game *game, int start, int end)
 {
 	char	*src;
 	char	*scopy;
 	int		x;
-	// printf("[DEBUG] in utils02.c S: %s\n", s);//debug
 
-printf("[DEBUG] in utils02.c START: %d\n", start);//debug
-printf("[DEBUG] in utils02.c END: %d\n", end);//debug	
 	src = (char *)s;
 	scopy = (char *) arena_alloc(game->arena, ((end - start) + 1) * sizeof(char));
-	// if (scopy == NULL)
-	// 	return (NULL);
+	x = 0;
+	while (start < end)
+	{
+		if (src[start] == ' ')
+			simple_exit("Error\nError in path\n", game);
+		scopy[x] = src[start];
+		x++;
+		start++;
+	}
+	scopy[x] = '\0';
+	return (scopy);
+}
+
+char	*ft_strdup_color(const char *s, t_game *game, int start, int end)
+{
+	char	*src;
+	char	*scopy;
+	int		x;
+
+	src = (char *)s;
+	scopy = (char *) arena_alloc(game->arena, ((end - start) + 1) * sizeof(char));
 	x = 0;
 	while (start < end)
 	{
@@ -47,6 +63,29 @@ printf("[DEBUG] in utils02.c END: %d\n", end);//debug
 		start++;
 	}
 	scopy[x] = '\0';
-	printf("[DEBUG] in utils02.c SCOPY: %s\n", scopy);//debug
 	return (scopy);
+}
+
+int	ft_simple_atoi(const char *str, t_game *game)
+{
+	int	result;
+	int	i;
+	int	x;
+
+	result = 0;
+	i = 0;
+	x = 0;
+	while (str[x])
+	{
+		if (str[x] < '0' || str[x] > '9')
+			simple_exit("Error\nInvalid color\n", game);
+		x++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result = (result * 10) + (str[i] - '0');
+		i = i + 1;
+	}
+
+	return (result);
 }

@@ -58,11 +58,7 @@
 static void	map_len_check(t_game *game)
 {
 	if (ft_strlen(game->file.full_map) < 11)
-	{
-		ft_putstr_fd("Error\nNot a proper map\n", 2);
-		simple_exit(game);
-		exit (EXIT_FAILURE);
-	}
+		simple_exit("Error\nNot a proper map\n", game);
 }
 /*
 // void	divede_cub_file(t_game *game)

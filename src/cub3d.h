@@ -33,18 +33,24 @@ typedef struct s_file
 	int		start_position;
 	char	**map_matrix;
 	char	**map_matrix_flood;  //serve?
-	int		NO;
-	int		SO;
-	int		WE;
-	int		EA;
-	int		F;
-	int		C;
-	char	*NO_path;
-	char	*SO_path;
-	char	*WE_path;
-	char	*EA_path;
-	char	*F_path;
-	char	*C_path;
+	int		no;
+	int		so;
+	int		we;
+	int		ea;
+	int		f;
+	int		c;
+	char	*no_path;
+	char	*so_path;
+	char	*we_path;
+	char	*ea_path;
+	char	*f_path;
+	char	*c_path;
+	int		f_r;
+	int		f_g;
+	int		f_b;
+	int		c_r;
+	int		c_g;
+	int		c_b;
 }	t_file;
 
 typedef struct s_game
@@ -93,7 +99,7 @@ int		find_path_2(t_game *game, int *i);
 int		find_color(t_game *game, int *i);
 
 //exit
-void	simple_exit(t_game *game);
+void	simple_exit(char *message, t_game *game);
 
 //utils
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
@@ -109,7 +115,9 @@ int		create_rgba(int r, int g, int b, int a);
 void	draw_mini_map(t_game *game);
 char	**ft_split(char const *s, char c, t_game *game);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
-char	*ft_strdupline(const char *s, t_game *game, int start, int end);
+char	*ft_strdup_path(const char *s, t_game *game, int start, int end);
+char	*ft_strdup_color(const char *s, t_game *game, int start, int end);
+int		ft_simple_atoi(const char *str, t_game *game);
 
 
 //test - to be removed
