@@ -92,7 +92,6 @@ bool 	is_map_at_end(t_game *game);
 void	ft_map_validation(char *argv, t_game *game);
 bool	is_surrounded(t_game *game);
 void	info_search(t_game *s_game);
-void	divide_cub_file(t_game *game, int *i);
 void	fill_map_matrix(t_game *game);
 int		find_path_1(t_game *game, int *i);
 int		find_path_2(t_game *game, int *i);
@@ -119,6 +118,4 @@ char	*ft_strdup_path(const char *s, t_game *game, int start, int end);
 char	*ft_strdup_color(const char *s, t_game *game, int start, int end);
 int		ft_simple_atoi(const char *str, t_game *game);
 
-
-//test - to be removed
 #endif

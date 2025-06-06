@@ -55,11 +55,7 @@
 // }
 */
 
-static void	map_len_check(t_game *game)
-{
-	if (ft_strlen(game->file.full_map) < 11)
-		simple_exit("Error\nNot a proper map\n", game);
-}
+
 /*
 // void	divede_cub_file(t_game *game)
 // {
@@ -97,13 +93,3 @@ static void	map_len_check(t_game *game)
 // }
 */
 
-void	divide_cub_file(t_game *game, int *y)
-{
-	int	map_len;
-
-	map_len = game->file.total_file_len - (*y);
-	game->file.full_map = arena_alloc(game->arena, map_len + 1);
-	ft_memcpy(game->file.full_map, game->file.full_file_one_line + (*y), map_len);
-	game->file.full_map[map_len] = '\0';
-	map_len_check(game);
-}
