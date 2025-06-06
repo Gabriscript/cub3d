@@ -3,7 +3,7 @@
 void	close_window(void *param)
 {
 	t_game *game = (t_game *)param;
-	mlx_close_window(game->mlx); //seg fault
+	mlx_close_window(game->mlx);
 }
 static bool	is_walkable(t_game *game, double x, double y)
 {

@@ -84,8 +84,6 @@ char	**ft_split(char const *s, char c, t_game *game)
 
 	word_count = count_words(s, c);
 	array = (char **)arena_alloc(game->arena, (word_count + 1) * sizeof(char *));
-	// if (array == NULL)
-	// 	return (NULL);
 	if (filling(array, s, c, game) == NULL)
 		return (NULL);
 	return (array);

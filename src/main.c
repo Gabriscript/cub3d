@@ -44,12 +44,29 @@ void	init_structs(t_game *game)
 {
 	game->file.full_file_one_line = NULL;
 	game->file.full_map = NULL;
-	game->file.full_info = NULL;
 	game->file.total_file_len = 0;
 	game->file.total_rows = 0;
 	game->file.start_position = 0;
 	game->file.map_matrix = NULL;
 	game->file.map_matrix_flood = NULL;
+	game->file.no = 0;
+	game->file.so = 0;
+	game->file.we = 0;
+	game->file.ea = 0;
+	game->file.f = 0;
+	game->file.c = 0;
+	game->file.no_path = NULL;
+	game->file.so_path = NULL;
+	game->file.we_path = NULL;
+	game->file.ea_path = NULL;
+	game->file.f_path = NULL;
+	game->file.c_path = NULL;
+	game->file.f_r = 0;
+	game->file.f_g = 0;
+	game->file.f_b = 0;
+	game->file.c_r = 0;
+	game->file.c_g = 0;
+	game->file.c_b = 0;
 }
 
 int	main(int argc, char **argv)
@@ -75,11 +92,11 @@ int	main(int argc, char **argv)
 
 	if (init_mlx_window(&game) == FAILURE)
 	{
-		simple_exit(&game);
+		arena_destroy(game.arena);
 		return (FAILURE);
 	}
 
 	// calling any usefull function as game start!!!
-	simple_exit(&game);
+	arena_destroy(game.arena);
 	return (SUCCESS);
 }

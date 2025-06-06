@@ -8,7 +8,7 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include "arena.h"
-# include "get_next_line_bonus.h"
+// # include "get_next_line_bonus.h"
 # include <MLX42/MLX42.h>
 # include <stdlib.h> //exit
 
@@ -28,12 +28,29 @@ typedef struct s_file
 {
 	char	*full_file_one_line;
 	char	*full_map;
-	char	*full_info;
 	int		total_file_len;
 	int		total_rows;  //serve?
 	int		start_position;
 	char	**map_matrix;
 	char	**map_matrix_flood;  //serve?
+	int		no;
+	int		so;
+	int		we;
+	int		ea;
+	int		f;
+	int		c;
+	char	*no_path;
+	char	*so_path;
+	char	*we_path;
+	char	*ea_path;
+	char	*f_path;
+	char	*c_path;
+	int		f_r;
+	int		f_g;
+	int		f_b;
+	int		c_r;
+	int		c_g;
+	int		c_b;
 }	t_file;
 
 typedef struct s_game
@@ -74,11 +91,15 @@ bool	map_has_all_component(t_game *game);
 bool 	is_map_at_end(t_game *game);
 void	ft_map_validation(char *argv, t_game *game);
 bool	is_surrounded(t_game *game);
-void	divede_cub_file(t_game *game);
+void	info_search(t_game *s_game);
+void	divide_cub_file(t_game *game, int *i);
 void	fill_map_matrix(t_game *game);
+int		find_path_1(t_game *game, int *i);
+int		find_path_2(t_game *game, int *i);
+int		find_color(t_game *game, int *i);
 
 //exit
-void	simple_exit(t_game *game);
+void	simple_exit(char *message, t_game *game);
 
 //utils
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
@@ -94,6 +115,9 @@ int		create_rgba(int r, int g, int b, int a);
 void	draw_mini_map(t_game *game);
 char	**ft_split(char const *s, char c, t_game *game);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
+char	*ft_strdup_path(const char *s, t_game *game, int start, int end);
+char	*ft_strdup_color(const char *s, t_game *game, int start, int end);
+int		ft_simple_atoi(const char *str, t_game *game);
 
 
 //test - to be removed
