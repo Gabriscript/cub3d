@@ -28,11 +28,12 @@ typedef struct s_file
 {
 	char	*full_file_one_line;
 	char	*full_map;
+	char	*full_map_zero_check;
 	int		total_file_len;
 	int		total_rows;  //serve?
 	int		start_position;
 	char	**map_matrix;
-	char	**map_matrix_flood;  //serve?
+	char	**map_matrix_zero_check;  //serve?
 	int		no;
 	int		so;
 	int		we;
@@ -87,15 +88,13 @@ typedef struct s_game
 
 //map
 void	ft_map_name(char *argv);
-bool	map_has_all_component(t_game *game);
-bool 	is_map_at_end(t_game *game);
 void	ft_map_validation(char *argv, t_game *game);
-bool	is_surrounded(t_game *game);
 void	info_search(t_game *s_game);
-void	fill_map_matrix(t_game *game);
 int		find_path_1(t_game *game, int *i);
 int		find_path_2(t_game *game, int *i);
 int		find_color(t_game *game, int *i);
+void	map_allowed_char_check(char *map_str, t_game *game);
+void	map_zero_check(t_game *game);
 
 //exit
 void	simple_exit(char *message, t_game *game);

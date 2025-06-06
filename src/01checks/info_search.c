@@ -41,6 +41,9 @@ static void	cub_map_part(t_game *game, int *y)
 	game->file.full_map[map_len] = '\0';
 	if (ft_strlen(game->file.full_map) < 11)
 		simple_exit("Error\nNot a proper map\n", game);
+	game->file.full_map_zero_check = arena_alloc(game->arena, map_len + 1);
+	ft_memcpy(game->file.full_map_zero_check, game->file.full_file_one_line + (*y), map_len);
+	game->file.full_map[map_len] = '\0';
 }
 
 void	info_search(t_game *game)
@@ -71,14 +74,3 @@ void	info_search(t_game *game)
 	info_checks(game);
 	cub_map_part(game, &y);
 }
-
-
-/*
-example of info:
-NO ./path_to_the_north_texture
-SO ./path_to_the_south_texture
-WE ./path_to_the_west_texture
-EA ./path_to_the_east_texture
-f 220,100,0
-C 225,30,0
-*/
