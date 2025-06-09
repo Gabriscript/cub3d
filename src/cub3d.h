@@ -28,11 +28,14 @@ typedef struct s_file
 {
 	char	*full_file_one_line;
 	char	*full_map;
+	char	*full_map_flood_fill;
 	int		total_file_len;
 	int		total_rows;  //serve?
 	int		start_position;
+	int		start_position_row;
+	int		start_position_col;
 	char	**map_matrix;
-	char	**map_matrix_flood;  //serve?
+	char	**map_matrix_flood_fill;  //serve?
 	int		no;
 	int		so;
 	int		we;
@@ -87,16 +90,15 @@ typedef struct s_game
 
 //map
 void	ft_map_name(char *argv);
-bool	map_has_all_component(t_game *game);
-bool 	is_map_at_end(t_game *game);
 void	ft_map_validation(char *argv, t_game *game);
-bool	is_surrounded(t_game *game);
+void	find_player(t_game *game);
+void	map_validation_flood_fill(t_game *game, char **map_flood, int row, int col);
 void	info_search(t_game *s_game);
-void	divide_cub_file(t_game *game, int *i);
-void	fill_map_matrix(t_game *game);
 int		find_path_1(t_game *game, int *i);
 int		find_path_2(t_game *game, int *i);
 int		find_color(t_game *game, int *i);
+void	map_allowed_char_check(char *map_str, t_game *game);
+void	map_zero_check(t_game *game);
 
 //exit
 void	simple_exit(char *message, t_game *game);
@@ -119,6 +121,4 @@ char	*ft_strdup_path(const char *s, t_game *game, int start, int end);
 char	*ft_strdup_color(const char *s, t_game *game, int start, int end);
 int		ft_simple_atoi(const char *str, t_game *game);
 
-
-//test - to be removed
 #endif
