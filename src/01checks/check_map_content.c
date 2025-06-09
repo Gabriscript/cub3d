@@ -76,14 +76,14 @@ void	player_start_position_condition_check(char *line, t_game *game)
 void	ft_map_validation(char *argv, t_game *game)
 {
 	ft_cub_file_check(argv, game);
-	//dividiamo la mappa dagli altri dati
-	//scorro la full_file_one_line e controllo i 6 dati iniziali
 	info_search(game);
-	//dopo questo punto da controllare
-	
 
-	// map_has_all_component()
 	player_start_position_condition_check(game->file.full_map, game);
-	fill_map_matrix(game);
+	map_allowed_char_check(game->file.full_map, game);
+	game->file.map_matrix = ft_split(game->file.full_map, '\n', game);
+	find_player(game);
+	map_validation_flood_fill(game, game->file.map_matrix_flood_fill, \
+		game->file.start_position_row, game->file.start_position_col);
+	//map_zero_check(game); //usato al posto del flood fill
 	
 }
