@@ -29,33 +29,33 @@ static void	draw_player(t_game *game)
 	game->mini_size = MINI_MAP / 10;
 	draw_piece(game, player_y, player_x, create_rgba(0, 255, 0, 255));
 }
-void	draw_mini_map(t_game *game)
+void draw_mini_map(t_game *game)
 {
-	int	y;
-	int	x;
-	int color;
-	int screen_x;
-	int screen_y;
-	
-	y = 0;
-	while (y < game->height)
-	{
-		x = 0;
-		while (game->map[y][x])
-		{
-			screen_x = MINI_OFFSET + x * MINI_MAP;
-			screen_y = MINI_OFFSET + y * MINI_MAP;
-			if (game->map[y][x] == '1')
-				color = create_rgba(100, 100, 100, 255);
-			else if (game->map[y][x] == '0')
-				color = create_rgba(255, 255, 255, 255);
-			else 
-				color = create_rgba(0, 255, 255, 255);
-			game->mini_size = MINI_MAP;
-			draw_piece(game, screen_y, screen_x, color);
-			x++;
-		}
-		y++;
-	}
-	draw_player(game);	
+    int y;
+    int x;
+    int color;
+    int screen_x;
+    int screen_y;
+    
+    y = 0;
+    while (y < game->file.total_rows)
+    {
+        x = 0;
+        while (game->file.map_matrix[y] && game->file.map_matrix[y][x])
+        {
+            screen_x = MINI_OFFSET + x * MINI_MAP;
+            screen_y = MINI_OFFSET + y * MINI_MAP;
+            if (game->file.map_matrix[y][x] == '1')
+                color = create_rgba(100, 100, 100, 255);
+            else if (game->file.map_matrix[y][x] == '0')
+                color = create_rgba(255, 255, 255, 255);
+            else 
+                color = create_rgba(0, 255, 255, 255);
+            game->mini_size = MINI_MAP;
+            draw_piece(game, screen_y, screen_x, color);
+            x++;
+        }
+        y++;
+    }
+    draw_player(game);    
 }

@@ -94,6 +94,7 @@ int init_mlx_window(t_game *game)
         mlx_terminate(game->mlx);
         return (FAILURE);
     }
+	init_player_position(game);
 	rendering(game);
     mlx_close_hook(game->mlx, close_window, game);
     mlx_key_hook(game->mlx, key_hook,game);

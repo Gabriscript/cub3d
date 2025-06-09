@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Debug Cub3d",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/cub3d",
+        "args": ["creepy.cub"],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "miDebuggerPath": "/usr/bin/gdb"
+      }
+    ]
+  }

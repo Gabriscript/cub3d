@@ -32,8 +32,8 @@ typedef struct s_file
 	int		total_file_len;
 	int		total_rows;  //serve?
 	int		start_position;
-	int		start_position_row;
-	int		start_position_col;
+	double	start_position_row;
+	double	start_position_col;
 	char	**map_matrix;
 	char	**map_matrix_flood_fill;  //serve?
 	int		no;
