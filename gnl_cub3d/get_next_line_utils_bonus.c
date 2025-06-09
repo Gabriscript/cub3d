@@ -1,15 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: cborrome <cborrome@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/19 11:09:37 by cborrome          #+#    #+#             */
-/*   Updated: 2025/01/29 14:03:53 by cborrome         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
+#include "cub3d.h"
 #include "get_next_line_bonus.h"
 
 size_t	ft_strlen_gnl(char *s)
@@ -24,11 +13,11 @@ size_t	ft_strlen_gnl(char *s)
 	return (i);
 }
 
-static char	*ft_prepare_str1(char *str1)
+static char	*ft_prepare_str1(char *str1, t_game *game)
 {
 	if (!str1)
 	{
-		str1 = (char *)malloc(sizeof(char) * 1);
+		str1 = (char *)arena_alloc(game->arena, sizeof(char) * 1);
 		if (str1 == NULL)
 			return (NULL);
 		str1[0] = '\0';
@@ -36,16 +25,16 @@ static char	*ft_prepare_str1(char *str1)
 	return (str1);
 }
 
-char	*ft_strjoin_gnl(char *str1, char *buffer)
+char	*ft_strjoin_gnl(char *str1, char *buffer, t_game *game)
 {
 	size_t		i;
 	size_t		j;
 	char		*output;
 
-	str1 = ft_prepare_str1(str1);
+	str1 = ft_prepare_str1(str1, game);
 	if (str1 == NULL || buffer == NULL)
 		return (NULL);
-	output = (char *)malloc(sizeof(char) * \
+	output = (char *)arena_alloc(game->arena, sizeof(char) * \
 	(ft_strlen_gnl(str1) + ft_strlen_gnl(buffer) + 1));
 	if (output == NULL)
 		return (NULL);
@@ -57,7 +46,7 @@ char	*ft_strjoin_gnl(char *str1, char *buffer)
 	while (buffer[i])
 		output[j++] = buffer[i++];
 	output[j] = '\0';
-	free(str1);
+	// free(str1);
 	return (output);
 }
 
