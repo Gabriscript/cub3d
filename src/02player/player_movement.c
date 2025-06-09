@@ -68,7 +68,7 @@ static void move_player(t_game *game, double direction)
         game->player_y = new_y;
 }
 
-static void strafe_player(t_game *game, double direction)
+/*static void strafe_player(t_game *game, double direction)
 {
     // Movimento laterale (strafe)
     double strafe_angle = game->player_angle + M_PI/2;
@@ -79,7 +79,7 @@ static void strafe_player(t_game *game, double direction)
         game->player_x = new_x;
     if (is_walkable(game, game->player_x, new_y))
         game->player_y = new_y;
-}
+}*/
 
 static void rotate_player(t_game *game, double direction)
 {
@@ -107,13 +107,9 @@ void key_hook(mlx_key_data_t keydata, void *param)
         else if (keydata.key == MLX_KEY_S)
             move_player(game, -1.0);
         else if (keydata.key == MLX_KEY_A)
-            strafe_player(game, -1.0);  // Strafe sinistra
+		rotate_player(game, 1.0);   // Ruota destra
         else if (keydata.key == MLX_KEY_D)
-            strafe_player(game, 1.0);   // Strafe destra
-        else if (keydata.key == MLX_KEY_LEFT)
-            rotate_player(game, -1.0);  // Ruota sinistra
-        else if (keydata.key == MLX_KEY_RIGHT)
-            rotate_player(game, 1.0);   // Ruota destra
+		rotate_player(game, -1.0);  // Ruota sinistra
         rendering(game);
     }
 }
