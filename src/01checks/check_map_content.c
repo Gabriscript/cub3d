@@ -81,7 +81,9 @@ void	ft_map_validation(char *argv, t_game *game)
 	player_start_position_condition_check(game->file.full_map, game);
 	map_allowed_char_check(game->file.full_map, game);
 	game->file.map_matrix = ft_split(game->file.full_map, '\n', game);
-	
-	map_zero_check(game);
+	find_player(game);
+	map_validation_flood_fill(game, game->file.map_matrix_flood_fill, \
+		game->file.start_position_row, game->file.start_position_col);
+	//map_zero_check(game); //usato al posto del flood fill
 	
 }

@@ -41,8 +41,8 @@ static void	cub_map_part(t_game *game, int *y)
 	game->file.full_map[map_len] = '\0';
 	if (ft_strlen(game->file.full_map) < 11)
 		simple_exit("Error\nNot a proper map\n", game);
-	game->file.full_map_zero_check = arena_alloc(game->arena, map_len + 1);
-	ft_memcpy(game->file.full_map_zero_check, game->file.full_file_one_line + (*y), map_len);
+	game->file.full_map_flood_fill = arena_alloc(game->arena, map_len + 1);
+	ft_memcpy(game->file.full_map_flood_fill, game->file.full_file_one_line + (*y), map_len);
 	game->file.full_map[map_len] = '\0';
 }
 

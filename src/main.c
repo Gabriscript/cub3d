@@ -13,12 +13,14 @@ void	init_structs(t_game *game)
 {
 	game->file.full_file_one_line = NULL;
 	game->file.full_map = NULL;
-	game->file.full_map_zero_check = NULL;
+	game->file.full_map_flood_fill = NULL;
 	game->file.total_file_len = 0;
 	game->file.total_rows = 0;//
 	game->file.start_position = 0;
+	game->file.start_position_row = 0;
+	game->file.start_position_col = 0;
 	game->file.map_matrix = NULL;
-	game->file.map_matrix_zero_check = NULL;
+	game->file.map_matrix_flood_fill = NULL;
 	game->file.no = 0;
 	game->file.so = 0;
 	game->file.we = 0;
