@@ -111,7 +111,7 @@ void draw_wall_line(t_game *game, int x, t_ray *ray)
 	}
 }
 
-// Funzione principale del raycasting
+
 void	raycast(t_game *game)
 {
 	int		x;
@@ -128,11 +128,11 @@ void	raycast(t_game *game)
 	}
 }
 
-// Aggiorna la funzione rendering per includere il raycasting
+
 int rendering(t_game *game)
 {
 	render_background(game);
-	raycast(game); // Aggiungi il raycasting
+	raycast(game);
 	draw_mini_map(game);
 	return 1;
 }
