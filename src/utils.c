@@ -59,6 +59,8 @@ void	ft_putstr_fd(char *str, int fd)
 {
 	if (!str)
 		return ;
-	write (fd, str, ft_strlen(str));
+	   ssize_t bytes_written = write(fd, str, ft_strlen(str));
+    if (bytes_written == -1)
+        perror("write");
 }
 

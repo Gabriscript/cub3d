@@ -88,6 +88,22 @@ typedef struct s_game
 	double		player_angle;
 }	t_game;
 
+typedef struct s_ray
+{
+    double ray_dir_x;
+    double ray_dir_y;
+    double delta_dist_x;
+    double delta_dist_y;
+    double side_dist_x;
+    double side_dist_y;
+    int step_x;
+    int step_y;
+    int map_x;
+    int map_y;
+    int hit;
+    int side;
+    double perp_wall_dist;
+} t_ray;
 //map
 void	ft_map_name(char *argv);
 void	ft_map_validation(char *argv, t_game *game);
@@ -120,5 +136,14 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 char	*ft_strdup_path(const char *s, t_game *game, int start, int end);
 char	*ft_strdup_color(const char *s, t_game *game, int start, int end);
 int		ft_simple_atoi(const char *str, t_game *game);
+void raycast(t_game *game);
+
+// test functions
+void init_test_map(t_game *game);
+void init_player_position(t_game *game);
+
+
+int rendering(t_game *game);
+void render_background(t_game *game);
 
 #endif
