@@ -27,7 +27,7 @@ void render_background(t_game *game)
     }
 }
 
-
+/*
 void init_test_map(t_game *game)
 {
     // Crea una mappa di test 10x10
@@ -69,6 +69,12 @@ void init_test_map(t_game *game)
     
     // Inizializza posizione giocatore
     init_player_position(game);
+}*/
+
+void update(void *param)
+{
+	t_game *game = (t_game *)param;
+	rendering(game);  // ora è void, quindi tutto ok
 }
 int init_mlx_window(t_game *game)
 {
@@ -95,7 +101,8 @@ int init_mlx_window(t_game *game)
         return (FAILURE);
     }
 	init_player_position(game);
-	rendering(game);
+	//rendering(game);
+   mlx_loop_hook(game->mlx, update, game);
     mlx_close_hook(game->mlx, close_window, game);
     mlx_key_hook(game->mlx, key_hook,game);
     mlx_loop(game->mlx);
