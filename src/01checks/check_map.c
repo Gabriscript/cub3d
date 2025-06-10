@@ -1,6 +1,6 @@
 #include "cub3d.h"
 
-static void is_directory(char *argv)
+static void	is_directory(char *argv)
 {
 	int	fd;
 
@@ -10,7 +10,7 @@ static void is_directory(char *argv)
 		ft_putstr_fd("Error\nDirectory is not a valid file\n", 2);
 		close(fd);
 		exit(EXIT_FAILURE);
-	}	
+	}
 	close(fd);
 }
 
@@ -21,7 +21,7 @@ static void	is_readable_and_exist(char *argv)
 	fd = open(argv, O_RDONLY);
 	if (fd < 0)
 	{
-		ft_putstr_fd("Error\nFile does not exist or has not reading permission\n", 2);
+		ft_putstr_fd("Error\nFile not exist or not reading permission\n", 2);
 		close(fd);
 		exit(EXIT_FAILURE);
 	}

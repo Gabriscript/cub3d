@@ -5,7 +5,7 @@ int	ft_strlen(char *str)
 	int	i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 		i++;
 	return (i);
 }
@@ -57,10 +57,11 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 void	ft_putstr_fd(char *str, int fd)
 {
+	ssize_t	bytes_written;
+
 	if (!str)
 		return ;
-	   ssize_t bytes_written = write(fd, str, ft_strlen(str));
-    if (bytes_written == -1)
-        perror("write");
+	bytes_written = write(fd, str, ft_strlen(str));
+	if (bytes_written == -1)
+		perror("write");
 }
-

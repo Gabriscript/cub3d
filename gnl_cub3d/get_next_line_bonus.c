@@ -16,7 +16,6 @@ char	*get_next_line(int fd, t_game *game)
 	output = ft_next_line_gnl(string[fd], game);
 	if (!output)
 	{
-		// free(string[fd]);
 		return (NULL);
 	}
 	string[fd] = ft_remaining_line_gnl(string[fd], game);
@@ -88,13 +87,12 @@ char	*ft_remaining_line_gnl(char *line, t_game *game)
 		i++;
 	if (line[i] == '\0')
 	{
-		// free(line);
 		return (NULL);
 	}
-	str = (char *)arena_alloc(game->arena, (ft_strlen_gnl(line) - i + 1) * sizeof(char));
+	str = (char *)arena_alloc(game->arena,
+			(ft_strlen_gnl(line) - i + 1) * sizeof(char));
 	if (!str)
 	{
-		// free(line);
 		return (NULL);
 	}
 	i++;
@@ -102,6 +100,5 @@ char	*ft_remaining_line_gnl(char *line, t_game *game)
 	while (line[i] != '\0')
 		str[k++] = line[i++];
 	str[k] = '\0';
-	// free(line);
 	return (str);
 }

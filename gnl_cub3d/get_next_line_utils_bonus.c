@@ -34,8 +34,8 @@ char	*ft_strjoin_gnl(char *str1, char *buffer, t_game *game)
 	str1 = ft_prepare_str1(str1, game);
 	if (str1 == NULL || buffer == NULL)
 		return (NULL);
-	output = (char *)arena_alloc(game->arena, sizeof(char) * \
-	(ft_strlen_gnl(str1) + ft_strlen_gnl(buffer) + 1));
+	output = (char *)arena_alloc(game->arena, sizeof(char)
+			* (ft_strlen_gnl(str1) + ft_strlen_gnl(buffer) + 1));
 	if (output == NULL)
 		return (NULL);
 	i = 0;
@@ -46,7 +46,6 @@ char	*ft_strjoin_gnl(char *str1, char *buffer, t_game *game)
 	while (buffer[i])
 		output[j++] = buffer[i++];
 	output[j] = '\0';
-	// free(str1);
 	return (output);
 }
 
