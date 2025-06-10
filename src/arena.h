@@ -1,8 +1,9 @@
 #ifndef ARENA_H
 # define ARENA_H
-# define ARENA_SIZE (10 * 1024 * 1024)
 
 # include <stdlib.h>
+
+# define ARENA_SIZE (10 * 1024 * 1024)
 
 typedef struct s_arena
 {

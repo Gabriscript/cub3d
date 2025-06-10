@@ -19,15 +19,21 @@ static void	color_check(t_game *game)
 		simple_exit("Error\nInvalid color\n", game);
 }
 
-// static void	path_check(t_game *game)
-// {
-// 	int	fd;
+static void	path_check(char *path_str, t_game *game)
+{
+	int	path_len;
+	int	fd;
 
-// 	fd = open(game->file.no_path, O_RDONLY);
-// 	// if (fd == -1)
-// 	// 	simple_exit("Error\nError on opening the picture\n", game);
-// 	close(fd);
-// }
+	path_len = ft_strlen(path_str);
+	if (path_len < 4 || ft_strcmp(path_str + path_len - 4, ".xpm") != 0)
+		simple_exit("Error\nTexture must be .xpm file\n", game);
+	fd = open(path_str, O_RDONLY);
+	if (fd == -1)
+	{
+		simple_exit("Error\nError on opening the picture\n", game);
+	}
+	close(fd);
+}
 
 static void	info_checks(t_game *game)
 {
@@ -36,10 +42,10 @@ static void	info_checks(t_game *game)
 		simple_exit("Error\nMissing path identifier\n", game);
 	if (game->file.f != 1 || game->file.c != 1)
 		simple_exit("Error\nMissing color identifier\n", game);
-
-	//Addition
-	//aggiungo qui il controllo se il file della PATH esiste???
-	// path_check(game);
+	path_check(game->file.no_path, game);
+	path_check(game->file.so_path, game);
+	path_check(game->file.we_path, game);
+	path_check(game->file.ea_path, game);
 	color_check(game);
 }
 
