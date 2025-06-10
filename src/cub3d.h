@@ -21,7 +21,8 @@
 # define M_PI 3.14159265358979323846
 # define MINI_MAP 10
 # define MINI_OFFSET 10
-
+#define MINI_TILE_SIZE 10
+#define PLAYER_SIZE 4
 
 
 typedef struct s_file
@@ -143,7 +144,7 @@ void init_test_map(t_game *game);
 void init_player_position(t_game *game);
 
 
-int rendering(t_game *game);
+void rendering(t_game *game);
 void render_background(t_game *game);
 
 #endif

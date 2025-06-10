@@ -32,6 +32,7 @@ void init_player_position(t_game *game)
                     game->player_angle = M_PI/2;      // Sud
                 else if (c == 'N')
                     game->player_angle = (M_PI * 3)/2; // Nord
+                game->file.map_matrix[y][x] = '0';
                 return;
             }
             x++;

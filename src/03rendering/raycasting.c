@@ -129,10 +129,10 @@ void	raycast(t_game *game)
 }
 
 
-int rendering(t_game *game)
+void rendering(t_game *game)
 {
 	render_background(game);
-	raycast(game);
+    raycast(game);
 	draw_mini_map(game);
-	return 1;
+	
 }
