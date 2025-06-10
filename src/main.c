@@ -55,8 +55,8 @@ int	main(int argc, char **argv)
 	}
 	// init_all(game); // da costruire
 	init_structs(&game);
-	//ft_map_validation(argv[1], &game);
-	init_test_map(&game);
+	ft_map_validation(argv[1], &game);
+	//init_test_map(&game);
 	// graphic_initialisation(game);
 
 	if (init_mlx_window(&game) == FAILURE)
