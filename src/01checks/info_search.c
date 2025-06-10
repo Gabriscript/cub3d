@@ -19,6 +19,16 @@ static void	color_check(t_game *game)
 		simple_exit("Error\nInvalid color\n", game);
 }
 
+// static void	path_check(t_game *game)
+// {
+// 	int	fd;
+
+// 	fd = open(game->file.no_path, O_RDONLY);
+// 	// if (fd == -1)
+// 	// 	simple_exit("Error\nError on opening the picture\n", game);
+// 	close(fd);
+// }
+
 static void	info_checks(t_game *game)
 {
 	if (game->file.no != 1 || game->file.so != 1
@@ -29,7 +39,7 @@ static void	info_checks(t_game *game)
 
 	//Addition
 	//aggiungo qui il controllo se il file della PATH esiste???
-	//path_check();
+	// path_check(game);
 	color_check(game);
 }
 
@@ -47,7 +57,7 @@ static void	cub_map_part(t_game *game, int *y)
 	game->file.full_map_flood_fill = arena_alloc(game->arena, map_len + 1);
 	ft_memcpy(game->file.full_map_flood_fill, game->file.full_file_one_line
 		+ (*y), map_len);
-	game->file.full_map[map_len] = '\0';
+	game->file.full_map_flood_fill[map_len] = '\0';
 }
 
 void	info_search(t_game *game)

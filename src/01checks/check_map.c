@@ -11,7 +11,6 @@ static void	is_directory(char *argv)
 		close(fd);
 		exit(EXIT_FAILURE);
 	}
-	close(fd);
 }
 
 static void	is_readable_and_exist(char *argv)
@@ -22,7 +21,6 @@ static void	is_readable_and_exist(char *argv)
 	if (fd < 0)
 	{
 		ft_putstr_fd("Error\nFile not exist or not reading permission\n", 2);
-		close(fd);
 		exit(EXIT_FAILURE);
 	}
 	close(fd);

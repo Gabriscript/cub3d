@@ -18,7 +18,6 @@ LIBS = $(LIBMLX)/build/libmlx42.a \
 SRCS	=	./src/main.c \
 			./src/arena.c \
 			./src/simple_exit.c \
-			./src/arena_utils.c \
 			./src/01checks/check_files.c \
 			./src/01checks/check_map.c \
 			./src/01checks/check_map_content.c \
@@ -40,7 +39,6 @@ SRCS	=	./src/main.c \
 BSRCS	=	./src/main.c \
 			./src/arena.c \
 			./src/simple_exit.c \
-			./src/arena_utils.c \
 			./src/01checks/check_files.c \
 			./src/01checks/check_map.c \
 			./src/01checks/check_map_content.c \
