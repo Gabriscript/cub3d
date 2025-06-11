@@ -18,7 +18,6 @@ LIBS = $(LIBMLX)/build/libmlx42.a \
 SRCS	=	./src/main.c \
 			./src/arena.c \
 			./src/simple_exit.c \
-			./src/01checks/check_files.c \
 			./src/01checks/check_map.c \
 			./src/01checks/check_map_content.c \
 			./src/01checks/info_search.c \
@@ -26,7 +25,9 @@ SRCS	=	./src/main.c \
 			./src/01checks/find_path_color.c \
 			./src/01checks/map_requirements_check.c \
 			./src/02player/player_movement.c \
+			./src/02player/player_utils.c \
 			./src/03rendering/rendering.c \
+			./src/03rendering/dda.c \
 			./src/03rendering/raycasting.c \
 			./src/03rendering/texture.c \
 			./src/03rendering/mini_map.c \
@@ -40,7 +41,6 @@ SRCS	=	./src/main.c \
 BSRCS	=	./src/main.c \
 			./src/arena.c \
 			./src/simple_exit.c \
-			./src/01checks/check_files.c \
 			./src/01checks/check_map.c \
 			./src/01checks/check_map_content.c \
 			./src/01checks/info_search.c \
@@ -48,7 +48,9 @@ BSRCS	=	./src/main.c \
 			./src/01checks/find_path_color.c \
 			./src/01checks/map_requirements_check.c \
 			./src/02player/player_movement.c \
+			./src/02player/player_utils.c \
 			./src/03rendering/rendering.c \
+			./src/03rendering/dda.c \
 			./src/03rendering/texture.c \
 			./src/utils.c \
 			./src/utils02.c \

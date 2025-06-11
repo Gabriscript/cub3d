@@ -6,8 +6,8 @@ static void	path_check(char *path_str, t_game *game)
 	int	fd;
 
 	path_len = ft_strlen(path_str);
-	if (path_len < 4 || ft_strcmp(path_str + path_len - 4, ".xpm") != 0)
-		simple_exit("Error\nTexture must be .xpm file\n", game);
+	if (path_len < 4 || ft_strcmp(path_str + path_len - 4, ".png") != 0)
+		simple_exit("Error\nTexture must be .png file\n", game);
 	fd = open(path_str, O_RDONLY);
 	if (fd == -1)
 	{
