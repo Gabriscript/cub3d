@@ -56,7 +56,6 @@ char	*ft_strdup_color(const char *s, t_game *game, int start, int end)
 	scopy = (char *) arena_alloc(game->arena,
 			((end - start) + 1) * sizeof(char));
 	x = 0;
-	
 	while (src[end - 1] == ' ')
 		end--;
 	while (start < end)
@@ -83,7 +82,7 @@ int	ft_simple_atoi(const char *str, t_game *game)
 	while (str[x])
 	{
 		if (str[x] < '0' || str[x] > '9')
-			simple_exit("Error\nInvalid colorHERE\n", game);
+			simple_exit("Error\nInvalid color\n", game);
 		x++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')

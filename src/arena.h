@@ -3,7 +3,7 @@
 
 # include <stdlib.h>
 
-# define ARENA_SIZE (10 * 1024 * 1024)
+# define ARENA_SIZE 10485760
 
 typedef struct s_arena
 {

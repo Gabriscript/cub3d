@@ -55,10 +55,8 @@ int	main(int argc, char **argv)
 	game.arena = arena_create(ARENA_SIZE);
 	if (!game.arena)
 		return (FAILURE);
-	// init_all(game); // da costruire
 	init_structs(&game);
 	ft_map_validation(argv[1], &game);
-	//init_test_map(&game);
 	if (init_mlx_window(&game) == FAILURE)
 	{
 		arena_destroy(game.arena);
