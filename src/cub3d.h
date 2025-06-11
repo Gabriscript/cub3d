@@ -141,3 +141,21 @@ void	init_test_map(t_game *game);
 void	init_player_position(t_game *game);
 
 #endif
+/*
+Ad and D move left and right 
+arrows left and right change point of view.
+
+more speed/ more smooth
+
+F 025,    250,     0, 33, 277
+
+extra info in the info
+
+change space to one in the minimap
+
+
+corner
+
+floor[3] per i colori
+
+*/
