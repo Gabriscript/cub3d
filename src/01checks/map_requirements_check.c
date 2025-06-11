@@ -88,3 +88,22 @@ void	map_validation_flood_fill(t_game *game, char **map_flood,
 	map_validation_flood_fill(game, map_flood, row + 1, col);
 	map_validation_flood_fill(game, map_flood, row - 1, col);
 }
+
+void	space_to_wall(char **map_matrix)
+{
+	int	x;
+	int	y;
+
+	x = 0;
+	while(map_matrix[x])
+	{
+		y = 0;
+		while (map_matrix[x][y])
+		{
+			if (map_matrix[x][y] == ' ')
+				map_matrix[x][y] = '0';
+			y++;
+		}
+		x++;
+	}
+}

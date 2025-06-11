@@ -1,24 +1,5 @@
 #include "cub3d.h"
 
-static void	color_check(t_game *game)
-{
-	char	**f_color;
-	char	**c_color;
-
-	f_color = ft_split(game->file.f_path, ',', game);
-	c_color = ft_split(game->file.c_path, ',', game);
-	game->file.f_r = ft_simple_atoi(f_color[0], game);
-	game->file.f_g = ft_simple_atoi(f_color[1], game);
-	game->file.f_b = ft_simple_atoi(f_color[2], game);
-	game->file.c_r = ft_simple_atoi(c_color[0], game);
-	game->file.c_g = ft_simple_atoi(c_color[1], game);
-	game->file.c_b = ft_simple_atoi(c_color[2], game);
-	if (game->file.f_r > 255 || game->file.f_r > 255 || game->file.f_r > 255
-		|| game->file.f_r > 255 || game->file.f_r > 255
-		|| game->file.f_r > 255)
-		simple_exit("Error\nInvalid color\n", game);
-}
-
 static void	path_check(char *path_str, t_game *game)
 {
 	int	path_len;
@@ -75,9 +56,8 @@ void	info_search(t_game *game)
 	y = 0;
 	while (game->file.full_file_one_line[i])
 	{
-		if (game->file.no == 1 && game->file.so == 1
-			&& game->file.we == 1 && game->file.ea == 1 && game->file.f == 1
-			&& game->file.c == 1)
+		if (game->file.no == 1 && game->file.so == 1 && game->file.we == 1
+			&& game->file.ea == 1 && game->file.f == 1 && game->file.c == 1)
 			if (y == 0)
 				y = i;
 		while (game->file.full_file_one_line[i] == '\n'
@@ -89,6 +69,8 @@ void	info_search(t_game *game)
 			continue ;
 		else if (find_color(game, &i) == 1)
 			continue ;
+		else
+			simple_exit("Error\nInvalid info part\n", game);
 		i++;
 	}
 	info_checks(game);
