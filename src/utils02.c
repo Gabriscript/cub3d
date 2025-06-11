@@ -31,7 +31,8 @@ char	*ft_strdup_path(const char *s, t_game *game, int start, int end)
 	int		x;
 
 	src = (char *)s;
-	scopy = (char *) arena_alloc(game->arena, ((end - start) + 1) * sizeof(char));
+	scopy = (char *) arena_alloc(game->arena,
+			((end - start) + 1) * sizeof(char));
 	x = 0;
 	while (start < end)
 	{
@@ -52,7 +53,8 @@ char	*ft_strdup_color(const char *s, t_game *game, int start, int end)
 	int		x;
 
 	src = (char *)s;
-	scopy = (char *) arena_alloc(game->arena, ((end - start) + 1) * sizeof(char));
+	scopy = (char *) arena_alloc(game->arena,
+			((end - start) + 1) * sizeof(char));
 	x = 0;
 	while (start < end)
 	{
@@ -86,6 +88,5 @@ int	ft_simple_atoi(const char *str, t_game *game)
 		result = (result * 10) + (str[i] - '0');
 		i = i + 1;
 	}
-
 	return (result);
 }

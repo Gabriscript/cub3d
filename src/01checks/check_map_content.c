@@ -13,7 +13,6 @@ static void	total_file_len_calculation(int fd, t_game *game, t_file *file)
 	while (line != NULL)
 	{
 		char_in_line = ft_strlen_gnl(line);
-		// free(line);
 		file->total_file_len = file->total_file_len + char_in_line;
 		line = get_next_line(fd, game);
 	}
@@ -27,8 +26,10 @@ void	filling_line(char *map_name, t_game *game)
 	ssize_t	bytes_read;
 
 	fd = open(map_name, O_RDONLY);
-	bytes_read = read(fd, game->file.full_file_one_line, \
-						game->file.total_file_len);
+	if (fd == -1)
+        simple_exit("Error\nError on opening the map\n", game);
+	bytes_read = read(fd, game->file.full_file_one_line,
+			game->file.total_file_len);
 	if (bytes_read == -1)
 	{
 		close(fd);
@@ -41,14 +42,14 @@ void	filling_line(char *map_name, t_game *game)
 static void	ft_cub_file_check(char *map_name, t_game *game)
 {
 	int	fd;
-	
+
 	fd = open(map_name, O_RDONLY);
 	if (fd == -1)
 		simple_exit("Error\nError on opening the map\n", game);
 	total_file_len_calculation(fd, game, &game->file);
 	close(fd);
-	game->file.full_file_one_line = \
-			arena_alloc(game->arena, game->file.total_file_len + 1);
+	game->file.full_file_one_line = arena_alloc(game->arena,
+			game->file.total_file_len + 1);
 	filling_line(map_name, game);
 }
 
@@ -77,13 +78,11 @@ void	ft_map_validation(char *argv, t_game *game)
 {
 	ft_cub_file_check(argv, game);
 	info_search(game);
-
 	player_start_position_condition_check(game->file.full_map, game);
 	map_allowed_char_check(game->file.full_map, game);
+	map_new_lines_check(game->file.full_map, game);
 	game->file.map_matrix = ft_split(game->file.full_map, '\n', game);
 	find_player(game);
-	map_validation_flood_fill(game, game->file.map_matrix_flood_fill, \
+	map_validation_flood_fill(game, game->file.map_matrix_flood_fill,
 		game->file.start_position_row, game->file.start_position_col);
-	//map_zero_check(game); //usato al posto del flood fill
-	
 }

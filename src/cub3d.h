@@ -8,9 +8,8 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include "arena.h"
-// # include "get_next_line_bonus.h"
 # include <MLX42/MLX42.h>
-# include <stdlib.h> //exit
+# include <stdlib.h>
 
 # define SUCCESS 0
 # define FAILURE 1
@@ -21,9 +20,8 @@
 # define M_PI 3.14159265358979323846
 # define MINI_MAP 10
 # define MINI_OFFSET 10
-#define MINI_TILE_SIZE 10
-#define PLAYER_SIZE 4
-
+# define MINI_TILE_SIZE 10
+# define PLAYER_SIZE 4
 
 typedef struct s_file
 {
@@ -31,12 +29,12 @@ typedef struct s_file
 	char	*full_map;
 	char	*full_map_flood_fill;
 	int		total_file_len;
-	int		total_rows;  //serve?
+	int		total_rows;
 	int		start_position;
 	double	start_position_row;
 	double	start_position_col;
 	char	**map_matrix;
-	char	**map_matrix_flood_fill;  //serve?
+	char	**map_matrix_flood_fill;
 	int		no;
 	int		so;
 	int		we;
@@ -59,63 +57,60 @@ typedef struct s_file
 
 typedef struct s_game
 {
-	char	**map;  //serve?
-	int		height; //serve?
-	int		end_of_map;  //serve?
-	// char	**file; //serve? se si va cambiato il nome
-	mlx_t 	*mlx; 
-	t_arena *arena;
-	t_file	file;
-	mlx_image_t *image;
-	int		ceiling[3];
-	int		floor[3];
-	int		mini_size;
+	mlx_t			*mlx;
+	t_arena			*arena;
+	t_file			file;
+	mlx_image_t		*image;
+	int				ceiling[3];
+	int				floor[3];
+	int				mini_size;
 
 	// Texture PNG per i muri
 	mlx_texture_t	*north_texture;
 	mlx_texture_t	*south_texture;
 	mlx_texture_t	*east_texture;
 	mlx_texture_t	*west_texture;
-	
+
 	// Immagini MLX delle texture
 	mlx_image_t		*north_img;
 	mlx_image_t		*south_img;
 	mlx_image_t		*east_img;
 	mlx_image_t		*west_img;
-	
+
 	// Posizione del giocatore
-	double		player_x;
-	double		player_y;
-	double		player_angle;
+	double			player_x;
+	double			player_y;
+	double			player_angle;
 }	t_game;
 
 typedef struct s_ray
 {
-    double ray_dir_x;
-    double ray_dir_y;
-    double delta_dist_x;
-    double delta_dist_y;
-    double side_dist_x;
-    double side_dist_y;
-    int step_x;
-    int step_y;
-    int map_x;
-    int map_y;
-    int hit;
-    int side;
-    double perp_wall_dist;
-} t_ray;
+	double	ray_dir_x;
+	double	ray_dir_y;
+	double	delta_dist_x;
+	double	delta_dist_y;
+	double	side_dist_x;
+	double	side_dist_y;
+	int		step_x;
+	int		step_y;
+	int		map_x;
+	int		map_y;
+	int		hit;
+	int		side;
+	double	perp_wall_dist;
+}	t_ray;
 //map
 void	ft_map_name(char *argv);
 void	ft_map_validation(char *argv, t_game *game);
 void	find_player(t_game *game);
-void	map_validation_flood_fill(t_game *game, char **map_flood, int row, int col);
+void	map_validation_flood_fill(t_game *game,
+			char **map_flood, int row, int col);
 void	info_search(t_game *s_game);
 int		find_path_1(t_game *game, int *i);
 int		find_path_2(t_game *game, int *i);
 int		find_color(t_game *game, int *i);
 void	map_allowed_char_check(char *map_str, t_game *game);
-void	map_zero_check(t_game *game);
+void	map_new_lines_check(char *map_str, t_game *game);
 
 //exit
 void	simple_exit(char *message, t_game *game);
@@ -127,7 +122,7 @@ int		ft_strlen(char *str);
 int		ft_strcmp(const char *main, const char *compared);
 void	ft_putstr_fd(char *str, int fd);
 int		ft_isspace(char c);
-void	key_hook(mlx_key_data_t keydata, void* param);
+void	key_hook(mlx_key_data_t keydata, void *param);
 void	close_window(void *param);
 int		init_mlx_window(t_game *game);
 int		create_rgba(int r, int g, int b, int a);
@@ -137,14 +132,12 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 char	*ft_strdup_path(const char *s, t_game *game, int start, int end);
 char	*ft_strdup_color(const char *s, t_game *game, int start, int end);
 int		ft_simple_atoi(const char *str, t_game *game);
-void raycast(t_game *game);
+void	raycast(t_game *game);
+void	rendering(t_game *game);
+void	render_background(t_game *game);
 
 // test functions
-void init_test_map(t_game *game);
-void init_player_position(t_game *game);
-
-
-void rendering(t_game *game);
-void render_background(t_game *game);
+void	init_test_map(t_game *game);
+void	init_player_position(t_game *game);
 
 #endif

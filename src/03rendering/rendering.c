@@ -76,6 +76,7 @@ void update(void *param)
 	t_game *game = (t_game *)param;
 	rendering(game);  // ora è void, quindi tutto ok
 }
+
 int init_mlx_window(t_game *game)
 {
     // Inizializza MLX

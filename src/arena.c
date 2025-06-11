@@ -30,12 +30,6 @@ void	*arena_alloc(t_arena *arena, size_t size)
 	return (ptr);
 }
 
-// void	arena_reset(t_arena *arena)
-// {
-// 	if (arena)
-// 		arena->used = 0;
-// }
-
 void	arena_destroy(t_arena *arena)
 {
 	if (arena)

@@ -1,9 +1,12 @@
 #include "cub3d.h"
 
-static void draw_piece(t_game *game, int y, int x, int size, int color)
+static void	draw_piece(t_game *game, int y, int x, int size, int color)
 {
-	int i = 0;
-    int j = 0;
+	int	i;
+    int	j;
+
+	i = 0;
+    j = 0;
 	while (i < size)
 	{
 		j = 0;
@@ -18,7 +21,7 @@ static void draw_piece(t_game *game, int y, int x, int size, int color)
 	}
 }
 
-static void draw_player(t_game *game)
+static void	draw_player(t_game *game)
 {
 	int player_x = MINI_OFFSET + (int)(game->player_x * MINI_TILE_SIZE);
 	int player_y = MINI_OFFSET + (int)(game->player_y * MINI_TILE_SIZE);
@@ -35,9 +38,7 @@ static void draw_player(t_game *game)
 	}
 }
 
-
-
-void draw_mini_map(t_game *game)
+void	draw_mini_map(t_game *game)
 {
 	int y = 0, x, color, screen_x, screen_y;
 	while (y < game->file.total_rows)
