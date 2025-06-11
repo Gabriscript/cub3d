@@ -47,12 +47,6 @@ typedef struct s_file
 	char	*ea_path;
 	char	*f_path;
 	char	*c_path;
-	int		f_r;
-	int		f_g;
-	int		f_b;
-	int		c_r;
-	int		c_g;
-	int		c_b;
 }	t_file;
 
 typedef struct s_game
@@ -106,11 +100,13 @@ void	find_player(t_game *game);
 void	map_validation_flood_fill(t_game *game,
 			char **map_flood, int row, int col);
 void	info_search(t_game *s_game);
+void	color_check(t_game *game);
 int		find_path_1(t_game *game, int *i);
 int		find_path_2(t_game *game, int *i);
 int		find_color(t_game *game, int *i);
 void	map_allowed_char_check(char *map_str, t_game *game);
 void	map_new_lines_check(char *map_str, t_game *game);
+void	space_to_wall(char **map_matrix);
 
 //exit
 void	simple_exit(char *message, t_game *game);
@@ -136,8 +132,15 @@ void	raycast(t_game *game);
 void	rendering(t_game *game);
 void	render_background(t_game *game);
 
-// test functions
-void	init_test_map(t_game *game);
 void	init_player_position(t_game *game);
 
 #endif
+/*
+Ad and D move left and right 
+arrows left and right change point of view.
+
+more speed/ more smooth
+
+extra info in the info
+
+*/

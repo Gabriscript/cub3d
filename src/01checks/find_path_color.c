@@ -65,7 +65,7 @@ static char	*recover_color(t_game *game, t_file *file, int *i)
 
 	if (file->f > 1 || file->c > 1)
 		simple_exit("Error\nToo many color identifier\n", game);
-	*i += 2;
+	*i += 1;
 	while (game->file.full_file_one_line[*i] == ' ')
 		(*i)++;
 	if (game->file.full_file_one_line[*i] == '\n')

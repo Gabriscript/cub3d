@@ -85,4 +85,5 @@ void	ft_map_validation(char *argv, t_game *game)
 	find_player(game);
 	map_validation_flood_fill(game, game->file.map_matrix_flood_fill,
 		game->file.start_position_row, game->file.start_position_col);
+	space_to_wall(game->file.map_matrix);
 }

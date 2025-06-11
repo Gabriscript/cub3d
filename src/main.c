@@ -17,12 +17,12 @@ static void	path_rgb_init(t_game *game)
 	game->file.ea_path = NULL;
 	game->file.f_path = NULL;
 	game->file.c_path = NULL;
-	game->file.f_r = 0;
-	game->file.f_g = 0;
-	game->file.f_b = 0;
-	game->file.c_r = 0;
-	game->file.c_g = 0;
-	game->file.c_b = 0;
+	game->floor[0] = 0;
+	game->floor[1] = 0;
+	game->floor[2] = 0;
+	game->ceiling[0] = 0;
+	game->ceiling[1] = 0;
+	game->ceiling[2] = 0;
 }
 
 static void	init_structs(t_game *game)
