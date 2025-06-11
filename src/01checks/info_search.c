@@ -47,6 +47,37 @@ static void	cub_map_part(t_game *game, int *y)
 	game->file.full_map_flood_fill[map_len] = '\0';
 }
 
+static void	extra_info_check(char *info_line, int stop, t_game *game)
+{
+	int	start;
+
+	start = 0;
+	while (start < stop)
+	{
+		if (info_line[start] == '\n' || info_line[start] == ' ')
+			{
+				start++;
+				continue;
+			}
+		if ((info_line[start] == 'N' && info_line[start + 1] == 'O') || (info_line[start] == 'S' && info_line[start + 1] == 'O') || (info_line[start] == 'W' && info_line[start + 1] == 'E') || (info_line[start] == 'E' && info_line[start + 1] == 'A'))
+		{
+			start += 2;
+			while (info_line[start] == ' ' || info_line[start] != '\n')
+				(start)++;
+			continue;
+		}
+		if (info_line[start] == 'C' || info_line[start] == 'F')
+		{
+			start += 1;
+			while (info_line[start] == ' ' || info_line[start] != '\n')
+				(start)++;
+			continue;
+		}
+		else
+			simple_exit("Error\nInvalid info part\n", game);
+	}
+}
+
 void	info_search(t_game *game)
 {
 	int	i;
@@ -56,12 +87,11 @@ void	info_search(t_game *game)
 	y = 0;
 	while (game->file.full_file_one_line[i])
 	{
-		if (game->file.no == 1 && game->file.so == 1 && game->file.we == 1
-			&& game->file.ea == 1 && game->file.f == 1 && game->file.c == 1)
-			if (y == 0)
-				y = i;
+		if (y == 0 && game->file.no == 1 && game->file.so == 1 && game->file.we
+			== 1 && game->file.ea == 1 && game->file.f == 1 && game->file.c == 1)
+			y = i;
 		while (game->file.full_file_one_line[i] == '\n'
-			|| game->file.full_file_one_line[i] == ' ')
+		|| game->file.full_file_one_line[i] == ' ')
 			i++;
 		if (find_path_1(game, &i) == 1)
 			continue ;
@@ -69,10 +99,9 @@ void	info_search(t_game *game)
 			continue ;
 		else if (find_color(game, &i) == 1)
 			continue ;
-		else
-			simple_exit("Error\nInvalid info part\n", game);
 		i++;
 	}
 	info_checks(game);
+	extra_info_check(game->file.full_file_one_line, y, game);
 	cub_map_part(game, &y);
 }

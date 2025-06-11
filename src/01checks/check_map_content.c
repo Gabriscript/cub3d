@@ -27,7 +27,7 @@ void	filling_line(char *map_name, t_game *game)
 
 	fd = open(map_name, O_RDONLY);
 	if (fd == -1)
-        simple_exit("Error\nError on opening the map\n", game);
+		simple_exit("Error\nError on opening the map\n", game);
 	bytes_read = read(fd, game->file.full_file_one_line,
 			game->file.total_file_len);
 	if (bytes_read == -1)

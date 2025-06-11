@@ -4,7 +4,7 @@ static void	color_path_check(char *path, t_game *game)
 {
 	int	x;
 	int	comma_counter;
-	int number_counter;
+	int	number_counter;
 
 	x = 0;
 	comma_counter = 0;
