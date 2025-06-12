@@ -5,8 +5,8 @@ SO FPStextures/FPS64x/Texture3.png
 
 
 
-F 0,    255,     00 
-C 0,            0,                                                      200       
+F  1   ,    255,    01 
+C    2 ,   3  3    ,                                              
 
 
 

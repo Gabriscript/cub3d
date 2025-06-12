@@ -6,7 +6,7 @@
         "type": "cppdbg",
         "request": "launch",
         "program": "${workspaceFolder}/cub3d",
-        "args": ["creepy.cub"],
+        "args": ["map.cub"],
         "stopAtEntry": false,
         "cwd": "${workspaceFolder}",
         "externalConsole": false,
