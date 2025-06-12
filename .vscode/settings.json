@@ -1,6 +1,8 @@
 {
 	"files.associations": {
 		"stddef.h": "c",
-		"random": "c"
+		"random": "c",
+		"cmath": "c",
+		"complex": "c"
 	}
 }
