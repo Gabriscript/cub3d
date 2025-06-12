@@ -30,10 +30,10 @@
 # define SPEED 0.1
 # define ROTATION_SPEED 0.05
 # define M_PI 3.14159265358979323846
-# define MINI_MAP 10
-# define MINI_OFFSET 10
-# define MINI_TILE_SIZE 10
-# define PLAYER_SIZE 4
+# define MINI_MAP 10 // bonnus
+# define MINI_OFFSET 10 //bonus
+# define MINI_TILE_SIZE 10 //bonus
+# define PLAYER_SIZE 4 //bonus
 
 typedef struct s_file
 {
@@ -59,6 +59,7 @@ typedef struct s_file
 	char	*ea_path;
 	char	*f_path;
 	char	*c_path;
+	int		longest_column;//bonus
 }	t_file;
 
 typedef struct s_game
@@ -139,7 +140,7 @@ void		key_hook(mlx_key_data_t keydata, void *param);
 void		close_window(void *param);
 int			init_mlx_window(t_game *game);
 int			create_rgba(int r, int g, int b, int a);
-void		draw_mini_map(t_game *game);
+void		draw_mini_map(t_game *game);//bonus
 char		**ft_split(char const *s, char c, t_game *game);
 void		*ft_memcpy(void *dst, const void *src, size_t n);
 char		*ft_strdup_path(const char *s, t_game *game, int start, int end);

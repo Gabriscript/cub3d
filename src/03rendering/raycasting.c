@@ -12,7 +12,7 @@
 
 #include "cub3d.h"
 
-void	calculate_wall_bounds(t_ray *ray, int *draw_start, int *draw_end)
+static void	calculate_wall_bounds(t_ray *ray, int *draw_start, int *draw_end)
 {
 	int	line_height;
 
@@ -25,7 +25,7 @@ void	calculate_wall_bounds(t_ray *ray, int *draw_start, int *draw_end)
 		*draw_end = WINDOW_HEIGHT - 1;
 }
 
-int	calculate_texture_x(t_game *game, t_ray *ray, mlx_image_t *tex)
+static int	calculate_texture_x(t_game *game, t_ray *ray, mlx_image_t *tex)
 {
 	double	wall_x;
 	int		tex_x;
@@ -42,7 +42,7 @@ int	calculate_texture_x(t_game *game, t_ray *ray, mlx_image_t *tex)
 	return (tex_x);
 }
 
-void	draw_wall_line(t_game *game, int x, t_ray *ray)
+static void	draw_wall_line(t_game *game, int x, t_ray *ray)
 {
 	int			draw_bounds[2];
 	int			tex_coords[2];
@@ -80,10 +80,39 @@ void	raycast(t_game *game)
 		x++;
 	}
 }
+int longest_column_bonus(t_game *game) // bonus
+{
+	int	y;
+	int longest;
+	int	temp;
 
+	y = 1;
+	longest = ft_strlen(game->file.map_matrix[0]);
+	while(game->file.map_matrix[y])
+	{
+		temp = ft_strlen(game->file.map_matrix[y]);
+		if (temp > longest)
+			longest = temp;
+		y++;
+	}
+	return (longest);
+}
 void	rendering(t_game *game)
 {
+	int	longest;//bonus
+	static bool printed;// bonus
+
+	longest = longest_column_bonus(game);// bonus
 	render_background(game);
 	raycast(game);
-	draw_mini_map(game);//
+	if(game->file.total_rows < WINDOW_HEIGHT / 20 && longest < WINDOW_WIDTH / 20) // bonus
+		draw_mini_map(game);// bonus
+	else if ((game->file.total_rows >= WINDOW_HEIGHT / 20 || longest >= WINDOW_WIDTH / 20))                 //bonus
+	{
+			if(!printed)
+			{
+				ft_putstr_fd("Error\nMinimap maxsize 1/20\n",2);//bonus
+				printed = true;
+			}
+	}
 }
