@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   texture.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cborrome <cborrome@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/12 09:52:11 by cborrome          #+#    #+#             */
+/*   Updated: 2025/06/12 09:52:11 by cborrome         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "cub3d.h"
 
 mlx_image_t	*load_single_texture(mlx_t *mlx, const char *path)
@@ -82,5 +94,5 @@ int	get_texture_pixel(mlx_image_t *texture, int x, int y)
 		|| y >= (int)texture->height)
 		return (0);
 	pixel = &texture->pixels[(y * texture->width + x) * 4];
-	return (create_rgba(pixel[0],pixel[1],pixel[2],pixel[3]));
+	return (create_rgba(pixel[0], pixel[1], pixel[2], pixel[3]));
 }

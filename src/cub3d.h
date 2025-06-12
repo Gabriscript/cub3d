@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cub3d.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cborrome <cborrome@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/12 09:52:21 by cborrome          #+#    #+#             */
+/*   Updated: 2025/06/12 10:21:52 by cborrome         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CUB3D_H
 # define CUB3D_H
 
@@ -96,6 +108,7 @@ typedef struct s_ray
 	double	perp_wall_dist;
 }	t_ray;
 
+//map
 void		color_check(t_game *game);
 int			find_color(t_game *game, int *i);
 void		space_to_wall(char **map_matrix);
@@ -105,6 +118,7 @@ void		find_player(t_game *game);
 void		map_validation_flood_fill(t_game *game,
 				char **map_flood, int row, int col);
 void		info_search(t_game *s_game);
+int			info_path_initial_letter(int *start, char *info_line);
 int			find_path_1(t_game *game, int *i);
 int			find_path_2(t_game *game, int *i);
 int			find_color(t_game *game, int *i);
@@ -144,6 +158,4 @@ int			get_texture_pixel(mlx_image_t *texture, int x, int y);
 mlx_image_t	*load_single_texture(mlx_t *mlx, const char *path);
 mlx_image_t	*get_wall_texture(t_game *game, t_ray *ray);
 
-
 #endif
-

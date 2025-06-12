@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   info_search.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cborrome <cborrome@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/12 09:51:18 by cborrome          #+#    #+#             */
+/*   Updated: 2025/06/12 10:22:05 by cborrome         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "cub3d.h"
 
 static void	path_check(char *path_str, t_game *game)
@@ -55,23 +67,18 @@ static void	extra_info_check(char *info_line, int stop, t_game *game)
 	while (start < stop)
 	{
 		if (info_line[start] == '\n' || info_line[start] == ' ')
-			{
-				start++;
-				continue;
-			}
-		if ((info_line[start] == 'N' && info_line[start + 1] == 'O') || (info_line[start] == 'S' && info_line[start + 1] == 'O') || (info_line[start] == 'W' && info_line[start + 1] == 'E') || (info_line[start] == 'E' && info_line[start + 1] == 'A'))
 		{
-			start += 2;
-			while (info_line[start] == ' ' || info_line[start] != '\n')
-				(start)++;
-			continue;
+			start++;
+			continue ;
 		}
+		if (info_path_initial_letter(&start, info_line) == 1)
+			continue ;
 		if (info_line[start] == 'C' || info_line[start] == 'F')
 		{
 			start += 1;
 			while (info_line[start] == ' ' || info_line[start] != '\n')
 				(start)++;
-			continue;
+			continue ;
 		}
 		else
 			simple_exit("Error\nInvalid info part\n", game);
@@ -91,7 +98,7 @@ void	info_search(t_game *game)
 			== 1 && game->file.ea == 1 && game->file.f == 1 && game->file.c == 1)
 			y = i;
 		while (game->file.full_file_one_line[i] == '\n'
-		|| game->file.full_file_one_line[i] == ' ')
+			|| game->file.full_file_one_line[i] == ' ')
 			i++;
 		if (find_path_1(game, &i) == 1)
 			continue ;

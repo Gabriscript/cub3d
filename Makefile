@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: cborrome <cborrome@student.hive.fi>        +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/06/12 09:52:55 by cborrome          #+#    #+#              #
+#    Updated: 2025/06/12 10:22:30 by cborrome         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME			= cub3d
 NAME_BONUS  	= cub3d_bonus
 NAME_DEBUG		= cub3d_debug
@@ -21,6 +33,7 @@ SRCS	=	./src/main.c \
 			./src/01checks/check_map.c \
 			./src/01checks/check_map_content.c \
 			./src/01checks/info_search.c \
+			./src/01checks/info_search_2.c \
 			./src/01checks/color_check.c \
 			./src/01checks/find_path_color.c \
 			./src/01checks/map_requirements_check.c \
@@ -44,6 +57,7 @@ BSRCS	=	./src/main.c \
 			./src/01checks/check_map.c \
 			./src/01checks/check_map_content.c \
 			./src/01checks/info_search.c \
+			./src/01checks/info_search_2.c \
 			./src/01checks/color_check.c \
 			./src/01checks/find_path_color.c \
 			./src/01checks/map_requirements_check.c \
