@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggargani <ggargani@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: cborrome <cborrome@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 11:29:00 by cborrome          #+#    #+#             */
-/*   Updated: 2025/06/09 14:34:32 by ggargani         ###   ########.fr       */
+/*   Updated: 2025/06/12 09:52:31 by cborrome         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

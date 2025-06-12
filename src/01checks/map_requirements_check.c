@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   map_requirements_check.c                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cborrome <cborrome@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/12 09:51:14 by cborrome          #+#    #+#             */
+/*   Updated: 2025/06/12 10:15:28 by cborrome         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "cub3d.h"
 
 void	map_allowed_char_check(char *map_str, t_game *game)
@@ -73,13 +85,13 @@ void	map_validation_flood_fill(t_game *game, char **map_flood,
 		int row, int col)
 {
 	if (col && col - 1 < 0)
-		simple_exit("Error\nNot a valid map_COL-1 \n", game);//
+		simple_exit("Error\nNot a valid map\n", game);
 	if (row && row - 1 < 0)
-		simple_exit("Error\nNot a valid map_ROW-1 \n", game);//
+		simple_exit("Error\nNot a valid map\n", game);
 	if (row && row + 1 > game->file.total_rows)
-		simple_exit("Error\nNot a valid map_ROW+1 \n", game);//
+		simple_exit("Error\nNot a valid map\n", game);
 	if (!map_flood[row][col])
-		simple_exit("Error\nNot a valid map_FLOOD\n", game);//
+		simple_exit("Error\nNot a valid map\n", game);
 	if (map_flood[row][col] == '1' || map_flood[row][col] == 'V')
 		return ;
 	map_flood[row][col] = 'V';
@@ -95,7 +107,7 @@ void	space_to_wall(char **map_matrix)
 	int	y;
 
 	x = 0;
-	while(map_matrix[x])
+	while (map_matrix[x])
 	{
 		y = 0;
 		while (map_matrix[x][y])
