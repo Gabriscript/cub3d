@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils02.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cborrome <cborrome@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: ggargani <ggargani@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 09:52:43 by cborrome          #+#    #+#             */
-/*   Updated: 2025/06/12 09:52:44 by cborrome         ###   ########.fr       */
+/*   Updated: 2025/06/12 14:04:09 by ggargani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,8 @@ int	ft_simple_atoi(const char *str, t_game *game)
 	result = 0;
 	i = 0;
 	x = 0;
+	if (!str)
+		return (256);
 	while (str[x])
 	{
 		if (str[x] < '0' || str[x] > '9')

@@ -6,7 +6,7 @@
 /*   By: ggargani <ggargani@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 09:51:54 by cborrome          #+#    #+#             */
-/*   Updated: 2025/06/12 12:20:07 by ggargani         ###   ########.fr       */
+/*   Updated: 2025/06/12 14:12:28 by ggargani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,21 @@ bool	is_walkable(t_game *game, double x, double y)
 	int		map_y_r;
 	int		map_x_l;
 	int		map_x_r;
-	double radius;
+	double	radius;
 
 	radius = 0.7;
 	map_y_l = (int)(y + radius);
 	map_y_r = (int)(y - radius);
 	map_x_l = (x + radius);
 	map_x_r = (x - radius);
-
 	if (map_x_l < 0 || map_y_l < 0 || map_y_l >= game->file.total_rows)
-        return (false);
-    if (!game->file.map_matrix[map_y_r]
-        || map_x_r >= ft_strlen(game->file.map_matrix[map_y_r]))
-			return (false);
+		return (false);
+	if (!game->file.map_matrix[map_y_r]
+		|| map_x_r >= ft_strlen(game->file.map_matrix[map_y_r]))
+		return (false);
 	if (game->file.map_matrix[map_y_r][map_x_r] == '1'
 		|| game->file.map_matrix[map_y_l][map_x_l] == '1'
-		 || game->file.map_matrix[map_y_l][map_x_r] == '1'
+		|| game->file.map_matrix[map_y_l][map_x_r] == '1'
 		|| game->file.map_matrix[map_y_l][map_x_r] == '1')
 		return (false);
 	return (true);
