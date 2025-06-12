@@ -10,7 +10,7 @@ int	info_path_initial_letter(int *start, char *info_line)
 		(*start) += 2;
 		while (info_line[*start] == ' ' || info_line[*start] != '\n')
 			(*start)++;
-		return(1);
+		return (1);
 	}
-	return(0);
+	return (0);
 }

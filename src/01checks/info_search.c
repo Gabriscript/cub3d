@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   info_search.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cborrome <cborrome@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: ggargani <ggargani@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 09:51:18 by cborrome          #+#    #+#             */
-/*   Updated: 2025/06/12 10:22:05 by cborrome         ###   ########.fr       */
+/*   Updated: 2025/06/12 14:06:22 by ggargani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,8 +94,9 @@ void	info_search(t_game *game)
 	y = 0;
 	while (game->file.full_file_one_line[i])
 	{
-		if (y == 0 && game->file.no == 1 && game->file.so == 1 && game->file.we
-			== 1 && game->file.ea == 1 && game->file.f == 1 && game->file.c == 1)
+		if (y == 0 && game->file.no == 1 && game->file.so == 1
+			&& game->file.we == 1 && game->file.ea == 1
+			&& game->file.f == 1 && game->file.c == 1)
 			y = i;
 		while (game->file.full_file_one_line[i] == '\n'
 			|| game->file.full_file_one_line[i] == ' ')
