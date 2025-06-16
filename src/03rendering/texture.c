@@ -22,7 +22,6 @@ mlx_image_t	*load_single_texture(mlx_t *mlx, const char *path)
 	{
 		ft_putstr_fd("Error\nFailed to load texture: ", 2);
 		ft_putstr_fd((char *)path, 2);
-		ft_putstr_fd("\n", 2);
 		return (NULL);
 	}
 	image = mlx_texture_to_image(mlx, texture);
@@ -40,24 +39,24 @@ int	load_textures(t_game *game)
 {
 	game->north_img = load_single_texture(game->mlx, game->file.no_path);
 	if (!game->north_img)
-		return (FAILURE);
+		simple_exit("\n", game);
 	game->south_img = load_single_texture(game->mlx, game->file.so_path);
 	if (!game->south_img)
 	{
 		free_textures(game);
-		return (FAILURE);
+		simple_exit("\n", game);
 	}
 	game->east_img = load_single_texture(game->mlx, game->file.ea_path);
 	if (!game->east_img)
 	{
 		free_textures(game);
-		return (FAILURE);
+		simple_exit("\n", game);
 	}
 	game->west_img = load_single_texture(game->mlx, game->file.we_path);
 	if (!game->west_img)
 	{
 		free_textures(game);
-		return (FAILURE);
+		simple_exit("\n", game);
 	}
 	return (SUCCESS);
 }

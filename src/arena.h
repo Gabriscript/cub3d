@@ -27,5 +27,6 @@ typedef struct s_arena
 t_arena	*arena_create(size_t size);
 void	*arena_alloc(t_arena *arena, size_t size);
 void	arena_destroy(t_arena *arena);
+void	*ft_calloc(size_t count, size_t size);
 
 #endif

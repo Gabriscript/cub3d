@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mini_map.c                                         :+:      :+:    :+:   */
+/*   mini_map_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cborrome <cborrome@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/12 09:52:00 by cborrome          #+#    #+#             */
-/*   Updated: 2025/06/12 09:52:00 by cborrome         ###   ########.fr       */
+/*   Created: 2025/06/16 10:25:47 by cborrome          #+#    #+#             */
+/*   Updated: 2025/06/16 10:25:47 by cborrome         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "cub3d_bonus.h"
 
 static void	draw_piece(t_game *game, int y, int x, int size)
 {
