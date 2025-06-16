@@ -6,12 +6,12 @@
 /*   By: cborrome <cborrome@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 09:51:44 by cborrome          #+#    #+#             */
-/*   Updated: 2025/06/12 09:51:45 by cborrome         ###   ########.fr       */
+/*   Updated: 2025/06/16 10:17:36 by cborrome         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-#include "get_next_line_bonus.h"
+#include "get_next_line_cub3d.h"
 
 static void	total_file_len_calculation(int fd, t_game *game, t_file *file)
 {

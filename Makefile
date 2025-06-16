@@ -6,7 +6,7 @@
 #    By: cborrome <cborrome@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/12 09:52:55 by cborrome          #+#    #+#              #
-#    Updated: 2025/06/12 10:22:30 by cborrome         ###   ########.fr        #
+#    Updated: 2025/06/16 10:25:32 by cborrome         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,13 +42,13 @@ SRCS	=	./src/main.c \
 			./src/03rendering/rendering.c \
 			./src/03rendering/dda.c \
 			./src/03rendering/raycasting.c \
+			./src/03rendering/raycasting_00.c \
 			./src/03rendering/texture.c \
-			./src/03rendering/mini_map.c \
 			./src/utils.c \
 			./src/utils02.c \
 			./src/utils03.c \
-			./gnl_cub3d/get_next_line_bonus.c \
-			./gnl_cub3d/get_next_line_utils_bonus.c \
+			./gnl_cub3d/get_next_line_cub3d.c \
+			./gnl_cub3d/get_next_line_utils_cub3d.c \
 
 
 BSRCS	=	./src/main.c \
@@ -65,12 +65,15 @@ BSRCS	=	./src/main.c \
 			./src/02player/player_utils.c \
 			./src/03rendering/rendering.c \
 			./src/03rendering/dda.c \
+			./src/03rendering/raycasting.c \
+			./src/03rendering/raycasting_bonus.c \
 			./src/03rendering/texture.c \
+			./src/03rendering/mini_map_bonus.c \
 			./src/utils.c \
 			./src/utils02.c \
 			./src/utils03.c \
-			./gnl_cub3d/get_next_line_bonus.c \
-			./gnl_cub3d/get_next_line_utils_bonus.c \
+			./gnl_cub3d/get_next_line_cub3d.c \
+			./gnl_cub3d/get_next_line_utils_cub3d.c \
 
 OBJS	=	$(SRCS:%.c=%.o)
 BOBJ	=	$(BSRCS:%.c=%.o)

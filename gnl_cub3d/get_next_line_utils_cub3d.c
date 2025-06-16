@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
+/*   get_next_line_utils_cub3d.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cborrome <cborrome@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/12 09:53:09 by cborrome          #+#    #+#             */
-/*   Updated: 2025/06/12 09:53:09 by cborrome         ###   ########.fr       */
+/*   Created: 2025/06/16 10:17:59 by cborrome          #+#    #+#             */
+/*   Updated: 2025/06/16 10:17:59 by cborrome         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-#include "get_next_line_bonus.h"
+#include "get_next_line_cub3d.h"
 
 size_t	ft_strlen_gnl(char *s)
 {

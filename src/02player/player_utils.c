@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   player_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggargani <ggargani@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: cborrome <cborrome@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 09:51:54 by cborrome          #+#    #+#             */
-/*   Updated: 2025/06/12 14:12:28 by ggargani         ###   ########.fr       */
+/*   Updated: 2025/06/16 10:37:38 by cborrome         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ bool	is_walkable(t_game *game, double x, double y)
 	int		map_x_r;
 	double	radius;
 
-	radius = 0.7;
+	radius = 0.3;
 	map_y_l = (int)(y + radius);
 	map_y_r = (int)(y - radius);
 	map_x_l = (x + radius);

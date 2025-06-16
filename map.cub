@@ -1,12 +1,17 @@
 NO FPStextures/FPS64x/Texture0.png
 WE FPStextures/FPS64x/Texture1.png
+
+
+
 EA FPStextures/FPS64x/Texture2.png
+
+
 SO FPStextures/FPS64x/Texture3.png
 
 
 
-F  1   ,    255,    01 
-C    2 ,   3  3    ,                                              
+F  1,2    55,   01 
+C     3       ,1    14  ,1                                   
 
 
 

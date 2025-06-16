@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
+/*   get_next_line_cub3d.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cborrome <cborrome@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/12 09:53:06 by cborrome          #+#    #+#             */
-/*   Updated: 2025/06/12 09:53:06 by cborrome         ###   ########.fr       */
+/*   Created: 2025/06/16 10:18:25 by cborrome          #+#    #+#             */
+/*   Updated: 2025/06/16 10:18:25 by cborrome         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-#include "get_next_line_bonus.h"
+#include "get_next_line_cub3d.h"
 
 char	*get_next_line(int fd, t_game *game)
 {

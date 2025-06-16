@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
+/*   get_next_line_cub3d.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cborrome <cborrome@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 11:29:00 by cborrome          #+#    #+#             */
-/*   Updated: 2025/06/12 09:52:31 by cborrome         ###   ########.fr       */
+/*   Updated: 2025/06/16 10:16:40 by cborrome         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_BONUS_H
-# define GET_NEXT_LINE_BONUS_H
+#ifndef GET_NEXT_LINE_CUB3D_H
+# define GET_NEXT_LINE_CUB3D_H
 # include "cub3d.h"
 # include <stddef.h>
 # include <unistd.h>
