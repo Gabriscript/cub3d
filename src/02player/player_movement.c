@@ -58,17 +58,17 @@ void	key_hook(mlx_key_data_t keydata, void *param)
 	{
 		if (keydata.key == MLX_KEY_ESCAPE)
 			close_window(game);
-		else if (keydata.key == MLX_KEY_W)
+		if (keydata.key == MLX_KEY_W)
 			move_player(game, 1.0);
-		else if (keydata.key == MLX_KEY_S)
+		if (keydata.key == MLX_KEY_S)
 			move_player(game, -1.0);
-		else if (keydata.key == MLX_KEY_A)
+		if (keydata.key == MLX_KEY_A)
 			strafe_player(game, 1.0);
-		else if (keydata.key == MLX_KEY_D)
+		if (keydata.key == MLX_KEY_D)
 			strafe_player(game, -1.0);
-		else if (keydata.key == MLX_KEY_LEFT)
+		if (keydata.key == MLX_KEY_LEFT)
 			rotate_player(game, 1.0);
-		else if (keydata.key == MLX_KEY_RIGHT)
+		if (keydata.key == MLX_KEY_RIGHT)
 			rotate_player(game, -1.0);
 		rendering(game);
 	}

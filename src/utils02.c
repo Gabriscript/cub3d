@@ -6,7 +6,7 @@
 /*   By: cborrome <cborrome@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 09:52:43 by cborrome          #+#    #+#             */
-/*   Updated: 2025/06/16 10:05:42 by cborrome         ###   ########.fr       */
+/*   Updated: 2025/06/16 14:12:30 by cborrome         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,26 +36,34 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	return (dst);
 }
 
-char	*ft_strdup_path(const char *s, t_game *game, int start, int end)
+static void	check_split_numbers(const char *src, t_game *game, int start,
+		int end)
 {
-	char	*src;
-	char	*scopy;
-	int		x;
+	int	i;
+	int	in_number;
+	int	temp;
 
-	src = (char *)s;
-	scopy = (char *) arena_alloc(game->arena,
-			((end - start) + 1) * sizeof(char));
-	x = 0;
-	while (start < end)
+	i = start;
+	in_number = 0;
+	while (i < end && src[i] == ' ')
+		i++;
+	while (i < end)
 	{
-		if (src[start] == ' ')
-			simple_exit("Error\nError in path\n", game);
-		scopy[x] = src[start];
-		x++;
-		start++;
+		if (src[i] >= '0' && src[i] <= '9')
+			in_number = 1;
+		else if (src[i] == ' ' && in_number)
+		{
+			temp = i;
+			while (temp < end && src[temp] == ' ')
+				temp++;
+			if (temp < end && src[temp] >= '0' && src[temp] <= '9')
+				simple_exit("Error\nInvalid color\n", game);
+			in_number = 0;
+		}
+		else if (src[i] == ',')
+			in_number = 0;
+		i++;
 	}
-	scopy[x] = '\0';
-	return (scopy);
 }
 
 char	*ft_strdup_color(const char *s, t_game *game, int start, int end)
@@ -64,19 +72,19 @@ char	*ft_strdup_color(const char *s, t_game *game, int start, int end)
 	char	*scopy;
 	int		x;
 
-	src = (char *)s;
-	scopy = (char *) arena_alloc(game->arena,
-			((end - start) + 1) * sizeof(char));
 	x = 0;
+	src = (char *)s;
+	check_split_numbers(src, game, start, end);
+	scopy = (char *)arena_alloc(game->arena, ((end - start) + 1)
+			* sizeof(char));
 	while (src[end - 1] == ' ')
 		end--;
 	while (start < end)
 	{
-		while (src[start] == ' ')
+		while (start < end && src[start] == ' ')
 			start++;
-		scopy[x] = src[start];
-		x++;
-		start++;
+		if (start < end)
+			scopy[x++] = src[start++];
 	}
 	scopy[x] = '\0';
 	return (scopy);

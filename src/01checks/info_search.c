@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   info_search.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggargani <ggargani@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: cborrome <cborrome@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 09:51:18 by cborrome          #+#    #+#             */
-/*   Updated: 2025/06/12 14:06:22 by ggargani         ###   ########.fr       */
+/*   Updated: 2025/06/16 11:03:53 by cborrome         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ static void	extra_info_check(char *info_line, int stop, t_game *game)
 			continue ;
 		}
 		else
-			simple_exit("Error\nInvalid info part\n", game);
+			simple_exit("Error\nInvalid configuration part\n", game);
 	}
 }
 

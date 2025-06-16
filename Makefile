@@ -6,7 +6,7 @@
 #    By: cborrome <cborrome@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/12 09:52:55 by cborrome          #+#    #+#              #
-#    Updated: 2025/06/16 10:25:32 by cborrome         ###   ########.fr        #
+#    Updated: 2025/06/16 14:09:16 by cborrome         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,7 @@ SRCS	=	./src/main.c \
 			./src/utils.c \
 			./src/utils02.c \
 			./src/utils03.c \
+			./src/utils04.c \
 			./gnl_cub3d/get_next_line_cub3d.c \
 			./gnl_cub3d/get_next_line_utils_cub3d.c \
 
@@ -72,6 +73,7 @@ BSRCS	=	./src/main.c \
 			./src/utils.c \
 			./src/utils02.c \
 			./src/utils03.c \
+			./src/utils04.c \
 			./gnl_cub3d/get_next_line_cub3d.c \
 			./gnl_cub3d/get_next_line_utils_cub3d.c \
 

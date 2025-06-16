@@ -6,7 +6,7 @@
 /*   By: cborrome <cborrome@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 09:51:54 by cborrome          #+#    #+#             */
-/*   Updated: 2025/06/16 10:37:38 by cborrome         ###   ########.fr       */
+/*   Updated: 2025/06/16 11:14:11 by cborrome         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ bool	is_walkable(t_game *game, double x, double y)
 	int		map_x_r;
 	double	radius;
 
-	radius = 0.3;
+	radius = 0.25;
 	map_y_l = (int)(y + radius);
 	map_y_r = (int)(y - radius);
 	map_x_l = (x + radius);
@@ -33,7 +33,7 @@ bool	is_walkable(t_game *game, double x, double y)
 	if (game->file.map_matrix[map_y_r][map_x_r] == '1'
 		|| game->file.map_matrix[map_y_l][map_x_l] == '1'
 		|| game->file.map_matrix[map_y_l][map_x_r] == '1'
-		|| game->file.map_matrix[map_y_l][map_x_r] == '1')
+		|| game->file.map_matrix[map_y_r][map_x_l] == '1')
 		return (false);
 	return (true);
 }

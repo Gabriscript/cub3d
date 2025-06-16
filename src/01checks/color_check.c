@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   color_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggargani <ggargani@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: cborrome <cborrome@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 09:51:37 by cborrome          #+#    #+#             */
-/*   Updated: 2025/06/12 14:11:05 by ggargani         ###   ########.fr       */
+/*   Updated: 2025/06/16 11:04:37 by cborrome         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,10 +70,10 @@ static void	order_check(char *path, t_game *game)
 		while (path[x] == ' ')
 			x++;
 		if (path[x] == ',' && num_count == 0)
-			simple_exit("Error\nInvalid color path ORDER CHECK\n", game);
+			simple_exit("Error\nInvalid color path\n", game);
 		result = check_commas_digits(path[x], &num_count, &com_count, &x) == 1;
 		if (result == FAILURE)
-			simple_exit("Error\nInvalid color path END LINE\n", game);
+			simple_exit("Error\nInvalid color path\n", game);
 		x++;
 	}
 }
@@ -84,7 +84,6 @@ static void	color_path_check(char *path, t_game *game)
 	int	comma_counter;
 	int	number_counter;
 
-	printf("[DEBUG] in color_path_check %s\n", path);
 	x = 0;
 	comma_counter = 0;
 	number_counter = 0;
@@ -95,11 +94,11 @@ static void	color_path_check(char *path, t_game *game)
 			number_counter += 1;
 		else if (!((path[x] >= '0' && path[x] <= '9') || path[x] == ' '
 				|| path[x] == ','))
-			simple_exit("Error\nInvalid color path ELSE IF\n", game);
+			simple_exit("Error\nInvalid color path\n", game);
 		x++;
 	}
 	if (comma_counter != 2 || number_counter < 3 || number_counter > 9)
-		simple_exit("Error\nInvalid color pathNUMBER\n", game);
+		simple_exit("Error\nInvalid color path\n", game);
 	order_check(path, game);
 }
 
