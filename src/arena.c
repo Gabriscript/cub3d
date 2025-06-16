@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "arena.h"
-#include <string.h>
 
 t_arena	*arena_create(size_t size)
 {
@@ -20,7 +19,7 @@ t_arena	*arena_create(size_t size)
 	arena = (t_arena *)malloc(sizeof(t_arena));
 	if (!arena)
 		return (NULL);
-	arena->memory = (char *)malloc(size);
+	arena->memory = (char *)ft_calloc(size, 1);
 	if (!arena->memory)
 	{
 		free(arena);
